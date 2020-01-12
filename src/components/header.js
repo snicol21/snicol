@@ -24,7 +24,7 @@ const Header = ({ siteMetadata }) => {
           <h1>{siteMetadata.title}</h1>
           <div>{siteMetadata.subtitle}</div>
         </Link>
-        <Img fixed={data.logo.childImageSharp.fixed} />
+        <Img loading="eager" fixed={data.logo.childImageSharp.fixed} />
       </header>
       <nav>
         <Link to="/" activeClassName="active" className="desktop-only">
