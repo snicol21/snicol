@@ -10,7 +10,7 @@ const Header = ({ siteMetadata }) => {
       logo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
           fixed(width: 92) {
-            ...GatsbyImageSharpFixed_noBase64
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -24,9 +24,7 @@ const Header = ({ siteMetadata }) => {
           <h1>{siteMetadata.title}</h1>
           <div>{siteMetadata.subtitle}</div>
         </Link>
-        <Link to="/">
-          <Img loading="eager" fixed={data.logo.childImageSharp.fixed} />
-        </Link>
+        <Img fixed={data.logo.childImageSharp.fixed} />
       </header>
       <nav>
         <Link to="/" activeClassName="active" className="desktop-only">
