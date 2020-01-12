@@ -9,7 +9,7 @@ const Header = ({ siteMetadata }) => {
     query {
       logo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fixed(width: 92) {
+          fixed(width: 92, height: 92) {
             ...GatsbyImageSharpFixed
           }
         }
