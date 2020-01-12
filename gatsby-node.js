@@ -8,16 +8,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: "slug",
       node,
-      value: `/blog${value}`,
+      value: `${value}`,
     })
   }
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+
+  const blogTemplate = path.resolve("src/templates/blog-template.js")
+
   const result = await graphql(`
     query {
-      allMdx {
+      blog: allMdx(filter: { fileAbsolutePath: { regex: "/blog/" } }) {
         edges {
           node {
             fields {
@@ -34,11 +37,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild("Error on createPages")
   }
 
-  const posts = result.data.allMdx.edges
-  posts.forEach(({ node }, index) => {
+  const blog = result.data.blog.edges
+  blog.forEach(({ node }, index) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/blog-template.js`),
+      component: blogTemplate,
       context: { id: node.id },
     })
   })
