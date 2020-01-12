@@ -1,22 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import PropTypes from "prop-types"
 
 const Header = ({ siteMetadata }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "logo-92x92.png" }) {
-        childImageSharp {
-          fixed(width: 92) {
-            ...GatsbyImageSharpFixed_noBase64
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <header>
@@ -25,7 +11,7 @@ const Header = ({ siteMetadata }) => {
           <div>{siteMetadata.subtitle}</div>
         </Link>
         <Link to="/">
-          <Img fixed={data.logo.childImageSharp.fixed} />
+          <img src="logo-92x92.png" alt="logo" />
         </Link>
       </header>
       <nav>
