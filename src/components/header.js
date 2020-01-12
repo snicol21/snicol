@@ -7,7 +7,7 @@ import PropTypes from "prop-types"
 const Header = ({ siteMetadata }) => {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo.png" }) {
+      logo: file(relativePath: { eq: "logo-92x92.png" }) {
         childImageSharp {
           fixed(width: 92) {
             ...GatsbyImageSharpFixed_noBase64
@@ -24,7 +24,9 @@ const Header = ({ siteMetadata }) => {
           <h1>{siteMetadata.title}</h1>
           <div>{siteMetadata.subtitle}</div>
         </Link>
-        <Img loading="eager" fixed={data.logo.childImageSharp.fixed} />
+        <Link to="/">
+          <Img fixed={data.logo.childImageSharp.fixed} />
+        </Link>
       </header>
       <nav>
         <Link to="/" activeClassName="active" className="desktop-only">
