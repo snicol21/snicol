@@ -1,14 +1,12 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Icon from "../components/icon"
 
 const BlogLayout = ({ data: { mdx } }) => {
   return (
-    <Layout>
+    <>
       <SEO title={mdx.frontmatter.title} />
       <div className="back">
         <Link to="/blog">
@@ -38,7 +36,7 @@ const BlogLayout = ({ data: { mdx } }) => {
           </>
         )}
       </div>
-    </Layout>
+    </>
   )
 }
 

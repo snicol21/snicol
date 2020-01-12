@@ -1,12 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <>
     <SEO title="Home" />
     <h2>Hi people</h2>
     <p>Welcome to your new Gatsby site.</p>
@@ -15,7 +13,7 @@ const IndexPage = ({ data }) => (
       fluid={data.file.childImageSharp.fluid}
       style={{ maxWidth: `600px`, margin: `0 auto` }}
     />
-  </Layout>
+  </>
 )
 
 export default IndexPage

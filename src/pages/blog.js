@@ -1,14 +1,12 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Icon from "../components/icon"
 
 const BlogPage = ({ data }) => {
   const blogs = data.allMdx.edges
   return (
-    <Layout>
+    <>
       <SEO title="Blog" />
       {blogs.map(blog => (
         <div key={blog.node.id} className="blog">
@@ -33,7 +31,7 @@ const BlogPage = ({ data }) => {
           )}
         </div>
       ))}
-    </Layout>
+    </>
   )
 }
 
