@@ -8,7 +8,7 @@ const OffCanvasMenu = ({ isMenuOpen, toggleMenu, menuItems = [], className = "" 
   const [isMenuClosing, setIsMenuClosing] = useState(false)
 
   const hideBodyScroll = hide => {
-    if (typeof window !== `undefined`) {
+    if (typeof document !== `undefined`) {
       const setOverFlowY = value => (document.getElementsByTagName("body")[0].style.overflowY = value)
       hide ? setOverFlowY("hidden") : setOverFlowY("auto")
     }
