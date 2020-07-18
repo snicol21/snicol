@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import HorizontalMenu from "../base/HorizontalMenu"
-import OffCanvasMenu from "../base/OffCanvasMenu"
-import HamburgerButton from "../base/HamburgerButton"
+import HorizontalMenu from "./../base/HorizontalMenu"
+import OffCanvasMenu from "./../base/OffCanvasMenu"
+import HamburgerButton from "./../base/HamburgerButton"
 
 const Header = ({ siteMetadata }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
