@@ -1,0 +1,5 @@
+@tailwind base;
+
+button {
+  touch-action: manipulation;
+}

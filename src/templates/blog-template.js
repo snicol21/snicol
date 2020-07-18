@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import SEO from "../components/seo"
-import Icon from "../components/icon"
+import TechIcon from "../components/base/TechIcon"
 
 const BlogLayout = ({ data: { mdx } }) => {
   return (
@@ -16,9 +16,7 @@ const BlogLayout = ({ data: { mdx } }) => {
       </div>
       <div className="blog">
         <h3 className="blog-title">{mdx.frontmatter.title}</h3>
-        {mdx.frontmatter.subtitle && (
-          <h5 className="blog-subtitle">{mdx.frontmatter.subtitle}</h5>
-        )}
+        {mdx.frontmatter.subtitle && <h5 className="blog-subtitle">{mdx.frontmatter.subtitle}</h5>}
         <small className="blog-date">{mdx.frontmatter.date}</small>
         <div className="blog-body">
           <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -29,7 +27,7 @@ const BlogLayout = ({ data: { mdx } }) => {
             <div className="blog-categories">
               {mdx.frontmatter.categories.map((category, i) => (
                 <span key={i} className="blog-category">
-                  <Icon name={category}></Icon>
+                  <TechIcon name={category}></TechIcon>
                 </span>
               ))}
             </div>

@@ -5,5 +5,6 @@
     "*.js": "javascriptreact"
   },
   "prettier.configPath": ".prettierrc",
-  "cSpell.words": ["com", "frontmatter", "gmail", "nicol", "snicol"]
+  "cSpell.words": ["com", "frontmatter", "gmail", "nicol", "snicol"],
+  "editor.tabSize": 2
 }

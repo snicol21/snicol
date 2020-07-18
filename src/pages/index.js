@@ -9,10 +9,7 @@ const IndexPage = ({ data }) => (
     <h2>Hi people</h2>
     <p>Welcome to your new Gatsby site.</p>
     <p>Last updated: {data.site.buildTime}</p>
-    <Img
-      fluid={data.file.childImageSharp.fluid}
-      style={{ maxWidth: `600px`, margin: `0 auto` }}
-    />
+    <Img fluid={data.file.childImageSharp.fluid} style={{ maxWidth: `600px`, margin: `0 auto`, zIndex: -1 }} />
   </>
 )
 

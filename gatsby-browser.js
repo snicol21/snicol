@@ -1,1 +1,4 @@
-import "./src/scss/main.scss"
+import "./src/styles/styles.css"
+
+require("typeface-domine")
+require("typeface-open-sans")

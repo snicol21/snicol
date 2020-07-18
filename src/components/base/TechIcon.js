@@ -1,8 +1,8 @@
 import React from "react"
 import { withPrefix } from "gatsby"
 
-const Icon = ({ name }) => {
-  const getIcon = () => {
+const TechIcon = ({ name }) => {
+  const getTechIcon = () => {
     switch (name) {
       case "angular":
         return { name: "Angular", ref: "#angular" }
@@ -83,13 +83,13 @@ const Icon = ({ name }) => {
 
   return (
     <>
-      <div className="icon-container">
-        <svg className="icon">
-          <use xlinkHref={withPrefix(`sprite.svg${getIcon().ref}`)}></use>
+      <div>
+        <svg>
+          <use xlinkHref={withPrefix(`sprite.svg${getTechIcon().ref}`)}></use>
         </svg>
       </div>
-      {getIcon().name}
+      {getTechIcon().name}
     </>
   )
 }
-export default Icon
+export default TechIcon
