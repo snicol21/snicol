@@ -23,8 +23,8 @@ const ScriptPage = ({ source, frontMatter }: Props) => {
       <Head>
         <title>{frontMatter.title}</title>
       </Head>
-      <div className="flex justify-center py-16">
-        <div className="prose dark:prose-dark">
+      <div className="relative py-16 overflow-hidden">
+        <div className="prose dark:prose-dark mx-auto">
           <MDXRemote {...source} />
         </div>
       </div>

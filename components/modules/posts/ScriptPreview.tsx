@@ -7,7 +7,6 @@ type Props = IScriptFrontMatter & { slug: string }
 
 const ScriptPreview = ({ slug, title, date, categories, summary }: Props) => {
   const dateFormatted = getDateDisplay(date)
-  console.log(categories[0])
   return (
     <div>
       <div className="text-xs uppercase font-semibold text-gray-600 dark:text-gray-400">{dateFormatted.dateDisplay}</div>
