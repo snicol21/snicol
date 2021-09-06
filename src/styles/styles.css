@@ -1,6 +1,0 @@
-@import "./styles.base.css";
-@import "./fonts.css";
-@import "animate.css/animate.min.css";
-
-@tailwind components;
-@tailwind utilities;

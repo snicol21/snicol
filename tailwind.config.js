@@ -1,34 +1,72 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
-  purge: ["./src/**/*.html", "./src/**/*.js", "./src/**/*.jsx"],
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
-      colors: {
-        smoke: "rgba(0, 0, 0, 0.5)",
-        "smoke-light": "rgba(0, 0, 0, 0.25)",
-        "smoke-dark": "rgba(0, 0, 0, 0.75)",
-        theme: {
-          primary: "#F55D3E",
-          "primary-light-10": "#F66C51",
-          "primary-light-75": "#FCD6CF",
-          "primary-dark-10": "#F34320",
-          secondary: "#06AED5",
-          "secondary-light-10": "#06C7F2",
-          "secondary-light-75": "#B8F1FD",
-          "secondary-dark-10": "#059EC0",
-          tertiary: "#F0C808",
-          "tertiary-light-10": "#F8D31C",
-          "tertiary-light-75": "#FDF3C0",
-          "tertiary-dark-10": "#DAB707",
-        },
+      fontFamily: {
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
-    },
-    boxShadow: {
-      default: "0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0,0,0,.12)",
-      focus: "0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14),0px 5px 22px 4px rgba(0,0,0,.12)",
+      colors: {
+        primary: {
+          DEFAULT: "#00C807",
+          50: "#C2FFC4",
+          100: "#99FF9C",
+          200: "#70FF75",
+          300: "#47FF4E",
+          400: "#1FFF26",
+          500: "#00F508",
+          600: "#00C807",
+          700: "#00A305",
+          800: "#007A04",
+          900: "#005203",
+        },
+        "mat-black": "#0F141A",
+      },
+      spacing: {
+        "1/2": "50%",
+      },
+      typography(theme) {
+        return {
+          dark: {
+            css: {
+              color: theme("colors.gray.300"),
+              '[class~="lead"]': { color: theme("colors.gray.400") },
+              a: { color: theme("colors.gray.100") },
+              strong: { color: theme("colors.gray.100") },
+              "ul > li::before": { backgroundColor: theme("colors.gray.700") },
+              hr: { borderColor: theme("colors.gray.800") },
+              blockquote: {
+                color: theme("colors.gray.100"),
+                borderLeftColor: theme("colors.gray.800"),
+              },
+              h1: { color: theme("colors.gray.100") },
+              h2: { color: theme("colors.gray.100") },
+              h3: { color: theme("colors.gray.100") },
+              h4: { color: theme("colors.gray.100") },
+              code: { color: theme("colors.gray.100") },
+              "a code": { color: theme("colors.gray.100") },
+              pre: {
+                color: theme("colors.gray.200"),
+                backgroundColor: theme("colors.gray.800"),
+              },
+              thead: {
+                color: theme("colors.gray.100"),
+                borderBottomColor: theme("colors.gray.700"),
+              },
+              "tbody tr": { borderBottomColor: theme("colors.gray.800") },
+            },
+          },
+        }
+      },
     },
   },
   variants: {
-    backgroundColor: ["responsive", "hover", "focus", "active"],
+    extend: {
+      typography: ["dark"],
+      opacity: ["disabled"],
+    },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 }
