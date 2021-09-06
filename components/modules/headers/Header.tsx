@@ -1,5 +1,5 @@
 import Link from "next/link"
-import ThemeChanger from "../elements/buttons/ThemeChanger"
+import ThemeChanger from "../../elements/buttons/ThemeChanger"
 
 type INavigation = {
   name: string

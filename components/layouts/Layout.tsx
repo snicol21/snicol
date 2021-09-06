@@ -1,4 +1,4 @@
-import Header from "../modules/Header"
+import Header from "../modules/headers/Header"
 
 const Layout = ({ children, className = "" }) => {
   return (
