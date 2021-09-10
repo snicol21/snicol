@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.prose thead th:first-child input,
+.prose tbody td:first-child input {
+  margin-left: 2px;
+}
+
+.prose thead th:last-child input,
+.prose tbody td:last-child input {
+  margin-left: -2px;
+}
