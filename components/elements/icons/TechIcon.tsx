@@ -69,6 +69,8 @@ const TechIcon = ({ name, className = "" }) => {
         return { name: "Redux", ref: "#redux" }
       case "sass":
         return { name: "Sass", ref: "#sass" }
+      case "tailwind":
+        return { name: "Tailwind", ref: "#tailwind" }
       case "typescript":
         return { name: "Typescript", ref: "#typescript" }
       case "yaml":
