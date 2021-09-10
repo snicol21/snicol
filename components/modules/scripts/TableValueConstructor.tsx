@@ -12,9 +12,15 @@ const TableValueConstructor = () => {
     columns: ["Player", "Team", "Number"],
     values: [
       ["Michael Jordan", "Chicago Bulls", "23"],
-      ["John Stockton", "Utah Jazz", "12"],
+      ["Lebron James", "Cleveland Cavaliers", "23"],
+      ["Kareem Abdul-Jabbar", "Los Angeles Lakers", "33"],
+      ["Karl Malone", "Utah Jazz", "32"],
+      ["Magic Johnson", "Los Angeles Lakers", "32"],
+      ["Bill Russell", "Boston Celtics", "6"],
+      ["Wilt Chamberlain", "Los Angeles Lakers", "13"],
       ["Larry Bird", "Boston Celtics", "33"],
-      ["Kobe Bryant", "Los Angeles Lakers", "24"],
+      ["John Stockton", "Utah Jazz", "12"],
+      ["Hakeem Olajuwon", "Houston Rockets", "34"],
     ],
   } as IState)
 
@@ -22,7 +28,7 @@ const TableValueConstructor = () => {
   const alias = "tbl"
 
   const script = `SELECT\n${spaces}${alias}.[${table.columns.join(`],\n${spaces}${alias}.[`)}]\nFROM (\n${spaces}VALUES${spaces}${table.values.map(
-    (value) => `\n${spaces}(${value.map((val) => (isNaN(val as any) && val !== "NULL" ? `'${val}'` : val)).join(", ")})`
+    (value) => `\n${spaces}(${value.map((val) => (isNaN(val as any) && val !== "NULL" ? `'${val.replace("'", "''")}'` : val.replace("'", "''"))).join(", ")})`
   )}\n) AS ${alias} ([${table.columns.join("],[")}])`
 
   const onClickAddColumn = () => {
@@ -95,9 +101,15 @@ const TableValueConstructor = () => {
                 columns: ["Player", "Team", "Number"],
                 values: [
                   ["Michael Jordan", "Chicago Bulls", "23"],
-                  ["John Stockton", "Utah Jazz", "12"],
+                  ["Lebron James", "Cleveland Cavaliers", "23"],
+                  ["Kareem Abdul-Jabbar", "Los Angeles Lakers", "33"],
+                  ["Karl Malone", "Utah Jazz", "32"],
+                  ["Magic Johnson", "Los Angeles Lakers", "32"],
+                  ["Bill Russell", "Boston Celtics", "6"],
+                  ["Wilt Chamberlain", "Los Angeles Lakers", "13"],
                   ["Larry Bird", "Boston Celtics", "33"],
-                  ["Kobe Bryant", "Los Angeles Lakers", "24"],
+                  ["John Stockton", "Utah Jazz", "12"],
+                  ["Hakeem Olajuwon", "Houston Rockets", "34"],
                 ],
               })
             }
