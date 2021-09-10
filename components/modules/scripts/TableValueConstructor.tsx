@@ -73,9 +73,9 @@ const TableValueConstructor = () => {
           <div className="flex flex-col">
             <table>
               <thead className="align-middle">
-                <tr className="">
+                <tr>
                   {table.columns.map((column, columnIndx) => (
-                    <th key={columnIndx} scope="col" className="px-6 text-left text-xs  tracking-wider">
+                    <th key={columnIndx} scope="col" className="px-6 text-left  tracking-wider">
                       <input type="text" value={column} className="p-1 w-full font-medium dark:bg-mat-black" onChange={(e) => onChangeColumn(e, columnIndx)} />
                     </th>
                   ))}
@@ -85,7 +85,7 @@ const TableValueConstructor = () => {
                 {table.values.map((valueRow, valueRowIdx) => (
                   <tr key={valueRowIdx}>
                     {valueRow.map((value, valueIdx) => (
-                      <td key={valueIdx} className="px-6 py-4 whitespace-nowrap text-sm">
+                      <td key={valueIdx} className="px-6 py-4 whitespace-nowrap">
                         <input
                           type="text"
                           value={value}
