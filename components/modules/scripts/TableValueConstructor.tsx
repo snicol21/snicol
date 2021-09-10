@@ -69,7 +69,7 @@ const TableValueConstructor = () => {
         Reset
       </button>
       <div className="overflow-x-auto">
-        <div className="flex">
+        <div className="flex my-5">
           <div className="flex flex-col">
             <table>
               <thead className="align-middle">

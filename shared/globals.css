@@ -11,3 +11,12 @@
 .prose tbody td:last-child input {
   margin-left: -2px;
 }
+
+.prose thead th input,
+.prose tbody td input {
+  font-size: 16px;
+}
+
+.prose table {
+  margin: 0;
+}
