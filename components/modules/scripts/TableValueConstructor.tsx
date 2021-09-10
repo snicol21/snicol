@@ -86,7 +86,7 @@ const TableValueConstructor = () => {
   return (
     <div>
       <div className="overflow-x-auto">
-        <div className="flex w-full place-content-end">
+        <div className="w-full text-right">
           <button
             type="button"
             className="m-2 inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -133,21 +133,23 @@ const TableValueConstructor = () => {
               </thead>
               <tbody>
                 {table.values.map((valueRow, valueRowIdx) => (
-                  <tr key={valueRowIdx} className="relative">
+                  <tr key={valueRowIdx}>
                     {valueRow.map((value, valueIdx) => (
                       <td key={valueIdx} className={`px-6 py-4 whitespace-nowrap ${valueRowIdx % 2 === 0 ? "bg-transparent" : "bg-gray-100 dark:bg-gray-700"}`}>
-                        <input type="text" value={value} className="p-1 w-full bg-transparent" onChange={(e) => onChangeRowValue(e, valueRowIdx, valueIdx)} />
+                        <div className="flex items-center">
+                          <input type="text" value={value} className="p-1 w-full bg-transparent" onChange={(e) => onChangeRowValue(e, valueRowIdx, valueIdx)} />
+                          {valueIdx === valueRow.length - 1 && (
+                            <button
+                              type="button"
+                              className="inline-flex text-xs font-medium rounded-xl px-2.5 py-1.5 mr-2 text-gray-500 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              onClick={() => onClickDeleteRow(valueRowIdx)}
+                            >
+                              <TrashIcon className="h-5 w-5" aria-hidden="true" />
+                            </button>
+                          )}
+                        </div>
                       </td>
                     ))}
-                    <td className="absolute right-0">
-                      <button
-                        type="button"
-                        className="self-center place-content-center inline-flex w-11/12 mb-2 items-center px-2.5 py-1.5 text-xs font-medium rounded-xl text-gray-500 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        onClick={() => onClickDeleteRow(valueRowIdx)}
-                      >
-                        <TrashIcon className="h-5 w-5" aria-hidden="true" />
-                      </button>
-                    </td>
                   </tr>
                 ))}
               </tbody>
