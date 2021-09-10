@@ -7,12 +7,13 @@ import { classNames } from "../../../shared/utils/class.util"
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
-  const isDark = theme === "dark"
-  const onChangeTheme = () => (isDark ? setTheme("light") : setTheme("dark"))
 
   useEffect(() => setTheme(theme), [theme, setTheme])
   useEffect(() => setMounted(true), [setMounted])
   if (!mounted) return null
+
+  const isDark = theme === "dark"
+  const onChangeTheme = () => (isDark ? setTheme("light") : setTheme("dark"))
 
   return (
     <Switch
