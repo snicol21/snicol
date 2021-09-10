@@ -10,8 +10,8 @@ const ThemeChanger = () => {
   const isDark = theme === "dark"
   const onChangeTheme = () => (isDark ? setTheme("light") : setTheme("dark"))
 
-  useEffect(() => setMounted(true), [setMounted])
   useEffect(() => setTheme(theme), [theme, setTheme])
+  useEffect(() => setMounted(true), [setMounted])
   if (!mounted) return null
 
   return (
