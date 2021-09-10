@@ -11,7 +11,8 @@ export type IScriptFrontMatter = {
   title: string
   date: string
   categories: string[]
-  summary: string
+  description: string
+  image: string
 }
 
 type Props = {
@@ -40,7 +41,7 @@ const ScriptPage = ({ source, frontMatter }: Props) => {
               </div>
             </div>
             <h1 className="pt-8">{frontMatter.title}</h1>
-            <p className="mt-8 text-xl leading-8 text-gray-500 dark:text-gray-300">{frontMatter.summary}</p>
+            <p className="mt-8 text-xl leading-8 text-gray-500 dark:text-gray-300">{frontMatter.description}</p>
           </div>
           <MDXRemote {...source} />
         </div>

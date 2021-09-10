@@ -5,7 +5,7 @@ import TechIcon from "../../elements/icons/TechIcon"
 
 type Props = IScriptFrontMatter & { slug: string }
 
-const ScriptPreview = ({ slug, title, date, categories, summary }: Props) => {
+const ScriptPreview = ({ slug, title, date, categories, description }: Props) => {
   const dateFormatted = getDateDisplay(date)
   return (
     <div>
@@ -14,7 +14,7 @@ const ScriptPreview = ({ slug, title, date, categories, summary }: Props) => {
         <Link href={`/scripts/${slug}`}>
           <a className="text-xl font-semibold hover:text-primary-700">{title}</a>
         </Link>
-        <p className="mt-3 text-base text-gray-500 dark:text-gray-300">{summary}</p>
+        <p className="mt-3 text-base text-gray-500 dark:text-gray-300">{description}</p>
         <div className="mt-3 space-x-1">
           {categories.map((category) => (
             <span key={category} className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
