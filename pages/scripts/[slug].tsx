@@ -8,11 +8,13 @@ import { getDateDisplay } from "../../shared/utils/date.util"
 import { getAllPosts, scriptDirectory } from "../../shared/utils/data.util"
 
 export type IScriptFrontMatter = {
+  author: string
   title: string
   date: string
   categories: string[]
   description: string
-  image: string
+  authorImageUrl: string
+  imageUrl: string
 }
 
 type Props = {
