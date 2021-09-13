@@ -33,13 +33,22 @@ const ScriptPage = ({ source, frontMatter }: Props) => {
         <div className="prose dark:prose-dark mx-auto">
           <div className="mt-2 block">
             <div>
-              <div className="text-xs uppercase font-semibold text-gray-600 dark:text-gray-400">{dateFormatted.dateDisplay}</div>
-              <div className="space-x-1 pt-2">
-                {frontMatter.categories.map((category) => (
-                  <span key={category} className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                    <TechIcon name={category} className="-ml-1 mr-1.5 h-3 w-3" />
-                  </span>
-                ))}
+              <div className="flex justify-between text-xs uppercase font-semibold text-gray-600 dark:text-gray-400">
+                <time dateTime={frontMatter.date}>{dateFormatted.dateDisplay}</time>
+                <div>{frontMatter.author}</div>
+              </div>
+              <div className="flex justify-between pt-2">
+                <div className="space-x-1 t-2 w-10/12">
+                  {frontMatter.categories.map((category) => (
+                    <span key={category} className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                      <TechIcon name={category} className="-ml-1 mr-1.5 h-3 w-3" />
+                    </span>
+                  ))}
+                </div>
+                <div className="flex-shrink-0 h-10 w-10">
+                  <span className="sr-only">{frontMatter.author}</span>
+                  <img className="h-10 w-10 rounded-full m-0" style={{ margin: 0 }} src={frontMatter.authorImageUrl} alt="" />
+                </div>
               </div>
             </div>
             <h1 className="pt-8">{frontMatter.title}</h1>

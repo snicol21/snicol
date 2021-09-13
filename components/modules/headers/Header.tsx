@@ -6,9 +6,7 @@ type INavigation = {
   href: string
 }
 
-const navigation: INavigation[] = [
-  // { name: "Scripts", href: "#" }
-]
+const navigation: INavigation[] = []
 
 const Header = () => {
   return (

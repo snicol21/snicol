@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 
-export const scriptDirectory = path.join(process.cwd(), "_content", "scripts")
+export const scriptDirectory = path.join(process.cwd(), "_content", "posts")
 
 export function getAllPosts(directory: string) {
   const allPosts = fs.readdirSync(directory)
