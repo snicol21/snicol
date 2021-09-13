@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Layout from "../components/layouts/Layout"
-import ScriptPreview from "../components/modules/posts/ScriptPreview"
+import ScriptPreview from "../components/modules/preview/ScriptPreview"
 import { getAllPosts, scriptDirectory } from "../shared/utils/data.util"
 
 const Home = ({ posts }) => {

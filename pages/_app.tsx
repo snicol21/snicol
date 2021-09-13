@@ -2,7 +2,7 @@ import "../shared/globals.css"
 import Head from "next/head"
 import { ThemeProvider } from "next-themes"
 import { MDXProvider } from "@mdx-js/react"
-import TableValueConstructor from "../_content/components/table-value-constructor"
+import TableValueConstructor from "../content/components/table-value-constructor"
 
 const components = { TableValueConstructor }
 
