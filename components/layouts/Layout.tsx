@@ -1,19 +1,6 @@
-import { useEffect } from "react"
-import { addCopyButtons } from "../../shared/utils/copy-button.util"
 import Header from "../modules/headers/Header"
-const prism = require("prismjs")
-require("prismjs/components/prism-sql")
 
 const Layout = ({ children, className = "" }) => {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      prism.highlightAll()
-      if (navigator && navigator.clipboard) {
-        addCopyButtons(navigator.clipboard)
-      }
-    }
-  }, [])
-
   return (
     <div className={`${className} min-h-screen relative`}>
       <div>

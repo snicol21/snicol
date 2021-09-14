@@ -1,5 +1,6 @@
 import { PlusIcon, TrashIcon } from "@heroicons/react/solid"
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useEffect, useState } from "react"
+import { prismHighlightAll } from "../../shared/utils/prism.util"
 
 type IState = {
   columns: string[]
@@ -22,6 +23,10 @@ const TableValueConstructor = () => {
       ["Hakeem Olajuwon", "Houston Rockets", "34"],
     ],
   } as IState)
+
+  useEffect(() => {
+    prismHighlightAll()
+  }, [table])
 
   const spaces = " ".repeat(5)
   const alias = "tbl"

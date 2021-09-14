@@ -6,6 +6,9 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
 import TechIcon from "../../components/elements/icons/TechIcon"
 import { getDateDisplay } from "../../shared/utils/date.util"
 import { getAllPosts, scriptDirectory } from "../../shared/utils/data.util"
+import { useEffect, useState } from "react"
+import { prismHighlightAll } from "../../shared/utils/prism.util"
+import { addCopyButtons } from "../../shared/utils/copy-button.util"
 
 export type IScriptFrontMatter = {
   author: string
@@ -23,7 +26,19 @@ type Props = {
 }
 
 const ScriptPage = ({ source, frontMatter }: Props) => {
+  const [isMounted, setIsMounted] = useState(false)
   const dateFormatted = getDateDisplay(frontMatter.date)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (isMounted) {
+    prismHighlightAll()
+    if (navigator && navigator.clipboard) {
+      addCopyButtons(navigator.clipboard)
+    }
+  }
 
   return (
     <Layout>
