@@ -7,8 +7,8 @@ export function addCopyButtons(clipboard) {
     button.style.cssText = "position: absolute; right: 0; top: 0"
 
     var span = document.createElement("span")
+    span.style.width = "3rem"
     span.innerText = "Copy"
-    span.className = "w-12"
 
     button.appendChild(span)
 
