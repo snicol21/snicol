@@ -1,5 +1,5 @@
 export function addCopyButtons(clipboard) {
-  document.querySelectorAll("pre > code").forEach(function (codeBlock) {
+  document.querySelectorAll("pre > code").forEach((codeBlock) => {
     var button = document.createElement("button")
     button.className =
       "inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -14,17 +14,17 @@ export function addCopyButtons(clipboard) {
 
     button.appendChild(span)
 
-    button.addEventListener("click", function () {
+    button.addEventListener("click", () => {
       clipboard.writeText(codeBlock.textContent).then(
-        function () {
+        () => {
           /* Chrome doesn't seem to blur automatically, leaving the button in a focused state. */
           button.blur()
           span.innerText = "Copied!"
-          setTimeout(function () {
+          setTimeout(() => {
             span.innerText = "Copy"
           }, 1500)
         },
-        function (error) {
+        (error) => {
           span.innerText = "Error"
         }
       )
