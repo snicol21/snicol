@@ -12,7 +12,9 @@ imageUrl: "https://media.publit.io/file/table-value-constructor.png"
 
 ## What is a Table Value Constructor?
 
-According to Microsoft, a table value constructor "Specifies a set of row value expressions to be constructed into a table. The Transact-SQL table value constructor allows multiple rows of data to be specified in a single DML statement." [Table Value Construct (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/queries/table-value-constructor-transact-sql?view=sql-server-ver15)
+According to Microsoft, a table value constructor:
+
+> Specifies a set of row value expressions to be constructed into a table. The Transact-SQL table value constructor allows multiple rows of data to be specified in a single DML statement. [Table Value Construct (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/queries/table-value-constructor-transact-sql?view=sql-server-ver15)
 
 ### Example
 

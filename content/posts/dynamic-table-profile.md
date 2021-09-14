@@ -10,87 +10,191 @@ imageUrl: "https://media.publit.io/file/dynamic-table-profile.jpg"
 
 ![](https://media.publit.io/file/dynamic-table-profile.jpg)
 
-```sql
-IF OBJECT_ID(N'[dbo].[Players]', N'U') IS NOT NULL
-DROP TABLE [dbo].[Players];
+## Background
 
-SELECT
-     tbl.[Player],
-     tbl.[Team],
-     tbl.[Number]
-INTO [dbo].[Players]
-FROM (
-     VALUES
-     ('Michael Jordan', 'Chicago Bulls', 23),
-     ('Lebron James', 'Cleveland Cavaliers', 23),
-     ('Kareem Abdul-Jabbar', 'Los Angeles Lakers', 33),
-     ('Karl Malone', 'Utah Jazz', 32),
-     ('Magic Johnson', 'Los Angeles Lakers', 32),
-     ('Bill Russell', 'Boston Celtics', 6),
-     ('Wilt Chamberlain', 'Los Angeles Lakers', 13),
-     ('Larry Bird', 'Boston Celtics', 33),
-     ('John Stockton', 'Utah Jazz', 12),
-     ('Hakeem Olajuwon', 'Houston Rockets', 34)
-) AS tbl ([Player],[Team],[Number])
-```
+Much of my experience developing tools and products at [Health Catalyst](https://healthcatalyst.com) dealt with metadata stored within an analytics data warehouse. As users of this data warehouse created their own data marts, the platform always kept track and stored information about that data. One of the projects I worked on was to provide some simple profiles of the data, such as row, null, and unique counts of columns.
 
-```sql
-DECLARE @DatabaseNM NVARCHAR(255) = 'master'
-DECLARE @SchemaNM NVARCHAR(255) = 'dbo'
-DECLARE @TableNM NVARCHAR(255) = 'Players'
+### Example
 
-DECLARE @SQL NVARCHAR(MAX) = '';
-DECLARE @EntityFieldsWithId TABLE (
-     ID INT PRIMARY KEY,
-     FieldNM VARCHAR(255)
-)
-SET @SQL = '
-SELECT
-     [ORDINAL_POSITION] AS [ID],
-	 [COLUMN_NAME] AS [FieldNM]
-FROM ['+@DatabaseNM+'].[INFORMATION_SCHEMA].[COLUMNS] AS c
-WHERE c.[TABLE_SCHEMA]='''+@SchemaNM+'''
-      AND c.[TABLE_NAME] = '''+@TableNM+'''
-'
-INSERT INTO @EntityFieldsWithId
-EXEC(@SQL)
-```
+Let's say a user created a table of patients and stored that data with in the data warehouse. We wrote some scripts that would run some system jobs to automatically profile every column of this patient table. Rendering some very useful information about the contents of that table, including how many unique values could be found in the **GenderCD** column, or how many records in the table had the value of _Null_ on the **EthnicityDSC** column.
 
-```sql
-DECLARE @NumIDs INT = (SELECT COUNT(*) FROM @EntityFieldsWithId)
-DECLARE @ID INT = 1;
+## The Project
 
-DECLARE @SQLWhenClause NVARCHAR(MAX) = '';
-WHILE (@ID <= @NumIDs)
-BEGIN
-	DECLARE @FieldNM VARCHAR(255);
-	SELECT @FieldNM = FieldNM
-	FROM @EntityFieldsWithId
-	WHERE ID = @ID
+I wanted to share a series of scripts that I wrote which will walk you through a way in which you might go about dynamically generating a simple profile of all the columns of table.
 
-	SET @SQLWhenClause = @SQLWhenClause +
-          CHAR(10) + REPLICATE(' ', 10) +
-		'WHEN '''+@FieldNM+''' THEN CAST(tbl.['+@FieldNM+'] AS SQL_VARIANT) '
+1. Let's quickly generate some data that we can profile. I chose to use a Table Value Constructor statement and get a list of NBA player names. You can generate your own script by using [my handy dandy tool](table-value-constructor). Easy!
 
-	SET @ID = @ID + 1
-END
+   ```sql
+   IF OBJECT_ID(N'[dbo].[Players]', N'U') IS NOT NULL
+   DROP TABLE [dbo].[Players];
 
-DECLARE @SQLCaseStatement NVARCHAR(MAX) = '';
-SET @SQLCaseStatement = '
-SELECT
-     f.[FieldID],
-	 f.[FieldNM],
-     CASE f.[FieldNM] '+@SQLWhenClause+'
-     END AS ValueTXT
-FROM ['+@DatabaseNM+'].['+@SchemaNM+'].['+@TableNM+'] AS tbl
-WITH (NOLOCK) CROSS JOIN (
-	SELECT
-		 [ORDINAL_POSITION] AS [FieldID],
-		 [COLUMN_NAME] AS [FieldNM]
-	FROM ['+@DatabaseNM+'].[INFORMATION_SCHEMA].[COLUMNS] AS c
-	WHERE c.[TABLE_SCHEMA]='''+@SchemaNM+'''
-		  AND c.[TABLE_NAME] = '''+@TableNM+'''
-) AS f'
+   SELECT
+        tbl.[Player],
+        tbl.[Team],
+        tbl.[Number]
+   INTO [dbo].[Players] -- choose what you want to name this table
+   FROM (
+        VALUES
+        ('Michael Jordan', 'Chicago Bulls', 23),
+        ('Lebron James', 'Cleveland Cavaliers', 23),
+        ('Kareem Abdul-Jabbar', 'Los Angeles Lakers', 33),
+        ('Karl Malone', 'Utah Jazz', 32),
+        ('Magic Johnson', 'Los Angeles Lakers', 32),
+        ('Bill Russell', 'Boston Celtics', 6),
+        ('Wilt Chamberlain', 'Los Angeles Lakers', 13),
+        ('Larry Bird', 'Boston Celtics', 33),
+        ('John Stockton', 'Utah Jazz', 12),
+        ('Hakeem Olajuwon', 'Houston Rockets', 34)
+   ) AS tbl ([Player],[Team],[Number]);
+   ```
 
-EXEC(@SQLCaseStatement)
-```
+   ![](https://media.publit.io/file/dynamicTableProfile/data_example.png)
+
+2. Now let's use the system columns from SQL Server to derive and create a table variable of the metadata of our created field. This will be used as a way to iterate over the columns of our entity.
+
+   ```sql
+   DECLARE @DatabaseNM NVARCHAR(255) = 'master' -- replace
+   DECLARE @SchemaNM NVARCHAR(255) = 'dbo'      -- replace
+   DECLARE @TableNM NVARCHAR(255) = 'Players'   -- replace
+
+   DECLARE @SQL NVARCHAR(MAX) = '';
+   DECLARE @EntityColumnsWithId TABLE (
+        ID INT PRIMARY KEY,
+        ColumnNM VARCHAR(255)
+   )
+   SET @SQL = '
+   SELECT
+        [ORDINAL_POSITION] AS [ID],
+        [COLUMN_NAME] AS [ColumnNM]
+   FROM ['+@DatabaseNM+'].[INFORMATION_SCHEMA].[COLUMNS] AS c
+   WHERE c.[TABLE_SCHEMA]='''+@SchemaNM+'''
+        AND c.[TABLE_NAME] = '''+@TableNM+'''
+   '
+   INSERT INTO @EntityColumnsWithId
+   EXEC(@SQL);
+   ```
+
+3. Generate a sql query that does a simple case statement of every single field within our table, essentially pivoting all of the database of our columns vertically.
+
+   ```sql
+   DECLARE @NumIDs INT = (SELECT COUNT(*) FROM @EntityColumnsWithId)
+   DECLARE @ID INT = 1;
+
+   DECLARE @SQLWhenClause NVARCHAR(MAX) = '';
+   WHILE (@ID <= @NumIDs)
+   BEGIN
+        DECLARE @ColumnNM VARCHAR(255);
+        SELECT @ColumnNM = ColumnNM
+        FROM @EntityColumnsWithId
+        WHERE ID = @ID
+
+        SET @SQLWhenClause = @SQLWhenClause +
+             CHAR(10) + REPLICATE(' ', 10) +
+             'WHEN '''+@ColumnNM+''' THEN CAST(tbl.['+@ColumnNM+'] AS SQL_VARIANT) '
+
+        SET @ID = @ID + 1
+   END
+
+   IF OBJECT_ID(N'[dbo].[Profile_Pivot]', N'U') IS NOT NULL
+   DROP TABLE [dbo].[Profile_Pivot];
+
+   DECLARE @SQLCaseStatement NVARCHAR(MAX) = '';
+   SET @SQLCaseStatement = '
+   SELECT
+        f.[ColumnID],
+        f.[ColumnNM],
+        CASE f.[ColumnNM] '+@SQLWhenClause+'
+        END AS ValueTXT
+   INTO [dbo].[Profile_Pivot]
+   FROM ['+@DatabaseNM+'].['+@SchemaNM+'].['+@TableNM+'] AS tbl
+   WITH (NOLOCK) CROSS JOIN (
+        SELECT
+             [ORDINAL_POSITION] AS [ColumnID],
+             [COLUMN_NAME] AS [ColumnNM]
+        FROM ['+@DatabaseNM+'].[INFORMATION_SCHEMA].[COLUMNS] AS c
+        WHERE c.[TABLE_SCHEMA]='''+@SchemaNM+'''
+             AND c.[TABLE_NAME] = '''+@TableNM+'''
+   ) AS f'
+   EXEC(@SQLCaseStatement);
+   ```
+
+   - Generated SQL Case Statement that we've saved into a table called **[dbo].[Profile_Pivot]**
+
+     ![](https://media.publit.io/file/dynamicTableProfile/generated-case-statement.png)
+
+     ![](https://media.publit.io/file/dynamicTableProfile/generated_case-statement-data.png)
+
+4. Now all we have left to do is some calculations against this pivoted profile table.
+
+   - Get the row, null, and distinct counts.
+
+     ```sql
+     IF OBJECT_ID(N'[dbo].[Profile_Counts]', N'U') IS NOT NULL
+     DROP TABLE [dbo].[Profile_Counts];
+     SELECT
+          pv.[ColumnID],
+          pv.[ColumnNM],
+          COUNT(pv.[ValueTXT]) AS [RowCNT],
+          SUM(CASE
+               WHEN pv.[ValueTXT] IS NULL THEN 1
+               ELSE 0
+          END) AS [NullCNT],
+          COUNT(DISTINCT pv.[ValueTXT]) AS [DistinctCNT]
+     INTO [dbo].[Profile_Counts]
+     FROM [dbo].[Profile_Pivot] AS pv
+     GROUP BY pv.[ColumnID],pv.[ColumnNM];
+     ```
+
+   - Get a count of uniqueness
+
+     ```sql
+     IF OBJECT_ID(N'[dbo].[Profile_Unique]', N'U') IS NOT NULL
+     DROP TABLE [dbo].[Profile_Unique];
+     SELECT
+          uque.[ColumnID],
+          uque.[ColumnNM],
+          COUNT(*) AS [UniqueValueCNT]
+     INTO [dbo].[Profile_Unique]
+     FROM (
+               SELECT
+                    [ColumnID],
+                    [ColumnNM],
+                    [ValueTXT]
+               FROM [dbo].[Profile_Pivot]
+               WHERE [ValueTXT] IS NOT NULL
+               GROUP BY [ColumnID],[ColumnNM],[ValueTXT]
+               HAVING COUNT(*) = 1
+     ) AS uque
+     GROUP BY uque.[ColumnID],uque.[ColumnNM];
+     ```
+
+   - Combine all this profile data into one nice table
+
+     ```sql
+     IF OBJECT_ID(N'[dbo].[Profile_Full]', N'U') IS NOT NULL
+     DROP TABLE [dbo].[Profile_Full];
+     SELECT
+          a.[ColumnID],
+          a.[ColumnNM],
+          a.[RowCNT],
+          a.[NullCNT],
+          a.[DistinctCNT],
+          ISNULL(b.[UniqueValueCNT],0) AS [UniqueValueCNT]
+     INTO [dbo].[Profile_Full]
+     FROM [dbo].[Profile_Counts] AS a
+     LEFT JOIN [dbo].[Profile_Unique] AS b
+          ON b.[ColumnID] = a.[ColumnID]
+          AND b.[ColumnNM] = a.[ColumnNM];
+     ```
+
+     ```sql
+     SELECT *
+     FROM [dbo].[Profile_Full]
+     ORDER BY 1
+     ```
+
+     ![](https://media.publit.io/file/dynamicTableProfile/output.png)
+
+**Magic!**
+
+![](https://media.giphy.com/media/NmerZ36iBkmKk/giphy.gif)
