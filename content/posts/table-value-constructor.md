@@ -10,8 +10,35 @@ imageUrl: "https://media.publit.io/file/table-value-constructor.png"
 
 ![](https://media.publit.io/file/table-value-constructor.png)
 
-When writing code in Transact-SQL, sometimes you want to specify a set of your own values to use. I've always had a script laying around or have often gone to this [StackOverflow](https://stackoverflow.com/questions/1564956/how-can-i-select-from-list-of-values-in-sql-server/35093787#35093787) post to copy the same script and input my own values. As a learning exercise on my part and also for the rare occasions where I want to construct my own list, I made this little React component that allows you to add and remove columns or values from a table and it will generate the corresponding table value selector query.
+## What is a Table Value Constructor?
+
+According to Microsoft, a table value constructor "Specifies a set of row value expressions to be constructed into a table. The Transact-SQL table value constructor allows multiple rows of data to be specified in a single DML statement." [Table Value Construct (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/queries/table-value-constructor-transact-sql?view=sql-server-ver15)
+
+### Example
+
+```sql
+SELECT
+     tbl.[Name],
+     tbl.[ListPrice]
+FROM (
+     VALUES
+     ('Helmet', 25.50),
+     ('Wheel', 30.00)
+) AS tbl ([Name],[ListPrice])
+```
+
+## Let's make it easier to generate this script
+
+Oftentimes, while doing development in SQL, you might need some quick data to mimic some data or create a small table temporarily that matches a specific schema. Maybe you need a small reference table that will contain a static list of values. I always forget the syntax of a the _Table Value Constructor_ select statement and find myself googling the same thing to find an example `SELECT * FROM VALUES()` statement.
+
+Well, I decided to solve this problem and create my own little script generator.
+
+## BEHOLD! The Generator
+
+Simply modify the table values and copy the script down below.
 
 <TableValueConstructor />
 
-Happy Coding!!
+That was easy! You're welcome. Happy Coding!!
+
+![](https://media.giphy.com/media/tXTqLBYNf0N7W/giphy.gif)
