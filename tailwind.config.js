@@ -65,7 +65,6 @@ module.exports = {
   variants: {
     extend: {
       typography: ["dark"],
-      opacity: ["disabled"],
       transitionProperty: ["hover"],
     },
   },
