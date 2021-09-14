@@ -4,7 +4,7 @@ export function addCopyButtons(clipboard) {
     button.className =
       "m-2 inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     button.type = "button"
-    button.style.cssText = "position: absolute; right: 0; top: 0"
+    button.style.cssText = "position: absolute; right: 0"
 
     var span = document.createElement("span")
     span.style.width = "3rem"
@@ -29,7 +29,7 @@ export function addCopyButtons(clipboard) {
     })
 
     var pre = codeBlock.parentNode
-    codeBlock.parentElement.style.position = "relative"
-    pre.prepend(button)
+    pre.parentElement.style.position = "relative"
+    pre.parentNode.insertBefore(button, pre)
   })
 }
