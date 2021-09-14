@@ -191,7 +191,9 @@ const TableValueConstructor = () => {
         >
           <span className="w-10">{isCopied ? "Copied!" : "Copy"}</span>
         </button>
-        <pre>{script}</pre>
+        <pre className="language-sql">
+          <code>{script}</code>
+        </pre>
       </div>
     </div>
   )

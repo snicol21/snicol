@@ -24,6 +24,7 @@ type Props = {
 
 const ScriptPage = ({ source, frontMatter }: Props) => {
   const dateFormatted = getDateDisplay(frontMatter.date)
+
   return (
     <Layout>
       <Head>
