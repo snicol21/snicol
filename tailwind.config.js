@@ -66,6 +66,7 @@ module.exports = {
     extend: {
       typography: ["dark"],
       opacity: ["disabled"],
+      transitionProperty: ["hover"],
     },
   },
   plugins: [require("@tailwindcss/typography")],
