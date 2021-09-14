@@ -10,9 +10,9 @@ const ScriptPreview = ({ slug, author, title, date, categories, description, aut
   return (
     <Link href={`/posts/${slug}`}>
       <a className="flex flex-col rounded-lg shadow-lg dark:shadow-none overflow-hidden">
-        <a className="flex-shrink-0">
+        <div className="flex-shrink-0">
           <img className="h-48 w-full object-cover" src={imageUrl} alt="" />
-        </a>
+        </div>
         <div className="flex-1 p-6 flex flex-col justify-between dark:bg-gray-800">
           <div className="flex-1">
             <div className="mt-3 space-x-1">
