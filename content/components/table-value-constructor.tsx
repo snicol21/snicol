@@ -7,7 +7,6 @@ type IState = {
 }
 
 const TableValueConstructor = () => {
-  const [isCopied, setIsCopied] = useState(false)
   const [table, setTable] = useState({
     columns: ["Player", "Team", "Number"],
     values: [
@@ -66,27 +65,6 @@ const TableValueConstructor = () => {
     const newValues = [...table.values]
     newValues[i][j] = e.target.value
     setTable({ ...table, values: newValues })
-  }
-
-  async function copyTextToClipboard(text) {
-    if ("clipboard" in navigator) {
-      return await navigator.clipboard.writeText(text)
-    } else {
-      return document.execCommand("copy", true, text)
-    }
-  }
-
-  const handleCopyClick = () => {
-    copyTextToClipboard(script)
-      .then(() => {
-        setIsCopied(true)
-        setTimeout(() => {
-          setIsCopied(false)
-        }, 1500)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
   }
 
   return (
@@ -183,14 +161,7 @@ const TableValueConstructor = () => {
           </button>
         </div>
       </div>
-      <div className="relative">
-        <button
-          type="button"
-          className="absolute right-0 m-2 inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          onClick={handleCopyClick}
-        >
-          <span className="w-10">{isCopied ? "Copied!" : "Copy"}</span>
-        </button>
+      <div>
         <pre className="language-sql">
           <code>{script}</code>
         </pre>
