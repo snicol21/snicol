@@ -2,8 +2,16 @@ import Head from "next/head"
 import Layout from "../components/layouts/Layout"
 import ScriptPreview from "../components/modules/preview/ScriptPreview"
 import { getAllPosts, scriptDirectory } from "../shared/utils/data.util"
+import { getDateNumber } from "../shared/utils/date.util"
+import { IScriptFrontMatter } from "./posts/[slug]"
 
-const Home = ({ posts }) => {
+type IPost = IScriptFrontMatter & { slug: string }
+
+type Props = {
+  posts: IPost[]
+}
+
+const Home = ({ posts }: Props) => {
   return (
     <Layout>
       <Head>
@@ -15,9 +23,11 @@ const Home = ({ posts }) => {
             <h2 className="text-3xl tracking-tight font-extrabold sm:text-4xl">Scripts</h2>
           </div>
           <div className="mt-6 pt-10 grid gap-16">
-            {posts.map((post) => (
-              <ScriptPreview key={post.slug} {...post} />
-            ))}
+            {posts
+              .sort((a: IPost, b: IPost) => getDateNumber(b.date) - getDateNumber(a.date))
+              .map((post) => (
+                <ScriptPreview key={post.slug} {...post} />
+              ))}
           </div>
         </div>
       </div>

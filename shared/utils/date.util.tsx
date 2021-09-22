@@ -14,6 +14,10 @@ export type IDateDisplay = {
   isoString: string
 }
 
+export function getDateNumber(rawDate: Date | string): number {
+  return dayjs(rawDate).valueOf()
+}
+
 export function getDateDisplay(rawDate: Date | string): IDateDisplay {
   const date = dayjs(rawDate)
   return {
