@@ -86,7 +86,7 @@ export const RealtimeCrypto = () => {
 
   useEffect(() => {
     return () => {
-      first.current = false
+      ws.current.close()
     }
   }, [])
 
