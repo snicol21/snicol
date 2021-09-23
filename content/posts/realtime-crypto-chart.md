@@ -10,5 +10,4 @@ imageUrl: "https://media.publit.io/file/realtime-crypto-chart.webp"
 
 ![](https://media.publit.io/file/realtime-crypto-chart.webp)
 
-**Under Construction**
-![](https://media.giphy.com/media/1XgIXQEzBu6ZWappVu/giphy.gif)
+<RealtimeCrypto/>
