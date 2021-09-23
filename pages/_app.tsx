@@ -1,12 +1,10 @@
 import "../shared/globals.css"
 import "prismjs/themes/prism-tomorrow.css"
 import Head from "next/head"
-import dynamic from "next/dynamic"
 import { ThemeProvider } from "next-themes"
 import { MDXProvider } from "@mdx-js/react"
 import TableValueConstructor from "../content/components/table-value-constructor"
-
-const RealtimeCrypto = dynamic(() => import("../content/components/realtime-crypto-chart").then((mod) => mod.RealtimeCrypto), { ssr: false })
+import { RealtimeCrypto } from "../content/components/realtime-crypto-chart"
 
 const components = { TableValueConstructor, RealtimeCrypto }
 
