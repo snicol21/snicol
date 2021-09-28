@@ -4,7 +4,7 @@ import Head from "next/head"
 import { ThemeProvider } from "next-themes"
 import { MDXProvider } from "@mdx-js/react"
 import TableValueConstructor from "../components/posts/table-value-constructor"
-import { RealtimeCrypto } from "../components/posts/realtime-crypto-chart"
+import RealtimeCrypto from "../components/posts/realtime-crypto-chart"
 
 const components = { TableValueConstructor, RealtimeCrypto }
 

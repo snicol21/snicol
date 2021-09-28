@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { Line } from "react-chartjs-2"
 import { formatData } from "../../shared/utils/format-data.util"
 
-export const RealtimeCrypto = () => {
+const RealtimeCrypto = () => {
   const [currencies, setCurrencies] = useState([])
   const [pair, setPair] = useState("")
   const [price, setPrice] = useState("0.00")
@@ -126,7 +126,7 @@ export const RealtimeCrypto = () => {
   )
 }
 
-export const RealtimeCryptoChart = ({ price, data }) => {
+const RealtimeCryptoChart = ({ price, data }) => {
   const opts = {
     tooltips: {
       intersect: false,
@@ -147,3 +147,5 @@ export const RealtimeCryptoChart = ({ price, data }) => {
     </div>
   )
 }
+
+export default RealtimeCrypto
