@@ -5,15 +5,21 @@ import { MoonIcon, SunIcon } from "@heroicons/react/solid"
 import { classNames } from "../../../shared/utils/class.util"
 
 const ThemeChanger = () => {
-  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const [isDark, setIsDark] = useState(false)
 
   useEffect(() => setTheme(theme), [theme, setTheme])
-  useEffect(() => setMounted(true), [setMounted])
-  if (!mounted) return null
+  useEffect(() => setIsDark(!!(theme === "dark")), [theme, setIsDark])
 
-  const isDark = theme === "dark"
-  const onChangeTheme = () => (isDark ? setTheme("light") : setTheme("dark"))
+  const onChangeTheme = () => {
+    if (isDark) {
+      setTheme("light")
+      setIsDark(false)
+      return
+    }
+    setTheme("dark")
+    setIsDark(true)
+  }
 
   return (
     <Switch
