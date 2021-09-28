@@ -3,8 +3,8 @@ import "prismjs/themes/prism-tomorrow.css"
 import Head from "next/head"
 import { ThemeProvider } from "next-themes"
 import { MDXProvider } from "@mdx-js/react"
-import TableValueConstructor from "../content/components/table-value-constructor"
-import { RealtimeCrypto } from "../content/components/realtime-crypto-chart"
+import TableValueConstructor from "../components/posts/table-value-constructor"
+import { RealtimeCrypto } from "../components/posts/realtime-crypto-chart"
 
 const components = { TableValueConstructor, RealtimeCrypto }
 
