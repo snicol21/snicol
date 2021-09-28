@@ -8,8 +8,10 @@ const ThemeChanger = () => {
   const { theme, setTheme } = useTheme()
   const [isDark, setIsDark] = useState(false)
 
-  useEffect(() => setTheme(theme), [theme, setTheme])
-  useEffect(() => setIsDark(!!(theme === "dark")), [theme, setIsDark])
+  useEffect(() => {
+    setTheme(theme)
+    setIsDark(!!(theme === "dark"))
+  }, [theme, setTheme, setIsDark])
 
   const onChangeTheme = () => {
     if (isDark) {
