@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 import { Line } from "react-chartjs-2"
-import { formatData } from "../../shared/utils/format-data.util"
 
 const RealtimeCrypto = () => {
   const [currencies, setCurrencies] = useState([])
@@ -66,7 +65,7 @@ const RealtimeCrypto = () => {
         .then((res) => res.json())
         .then((data) => (dataArr = data))
       // console.log(dataArr)
-      let formattedData = formatData(dataArr)
+      let formattedData = formatCryptoData(dataArr)
       setPastData(formattedData)
     }
     fetchHistoricalData()
@@ -146,6 +145,50 @@ const RealtimeCryptoChart = ({ price, data }) => {
       </div>
     </div>
   )
+}
+
+const formatCryptoData = (data) => {
+  let finalData = {
+    labels: [],
+    datasets: [
+      {
+        data: [],
+        label: "Price",
+        fill: false,
+        backgroundColor: "rgb(255, 99, 132, 0.8)",
+        borderColor: "rgba(255, 99, 132, 0.2)",
+        borderWidth: 2,
+        // tension: 0,
+        // pointRadius: 0,
+        // pointHoverRadius: 3,
+        // pointBackgroundColor: "#D1D5DB",
+        // clip: 20,
+      },
+    ],
+  }
+
+  let dates = data.map((val) => {
+    const ts = val[0]
+    let date = new Date(ts * 1000)
+    let day = date.getDate()
+    let month = date.getMonth() + 1
+    let year = date.getFullYear()
+
+    let final = `${month}-${day}-${year}`
+    return final
+  })
+
+  let priceArr = data.map((val) => {
+    return val[4]
+  })
+
+  priceArr.reverse()
+  dates.reverse()
+  finalData.labels = dates
+  finalData.datasets[0].data = priceArr
+
+  // console.log("final data", finalData)
+  return finalData
 }
 
 export default RealtimeCrypto
