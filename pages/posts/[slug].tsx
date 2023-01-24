@@ -3,6 +3,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import rehypeSlug from 'rehype-slug';
 
 import TechIcon from '../../components/elements/icons/TechIcon';
 import Layout from '../../components/layouts/Layout';
@@ -82,7 +83,14 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   const { params } = context
   const allPosts = getAllPosts(scriptDirectory)
   const { data, content } = allPosts.find((post) => post.slug === params.slug)
-  const mdxSource = await serialize(content, { scope: data })
+
+  const options = {
+    scope: data,
+    mdxOptions: {
+      rehypePlugins: [rehypeSlug],
+    },
+  }
+  const mdxSource = await serialize(content, options)
   return { props: { source: mdxSource, frontMatter: data as IScriptFrontMatter } }
 }
 
