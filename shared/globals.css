@@ -20,3 +20,8 @@
 .prose table {
   margin: 0;
 }
+
+.prose img {
+  border-radius: 10px;
+  width: 100%;
+}

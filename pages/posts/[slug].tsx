@@ -47,7 +47,7 @@ const ScriptPage = ({ source, frontMatter }: Props) => {
         <title>{frontMatter.title}</title>
       </Head>
       <div className="relative py-16 overflow-hidden">
-        <div className="prose dark:prose-dark mx-auto">
+        <div className="prose lg:prose-xl xl:prose-2xl dark:prose-dark mx-auto">
           <div className="mt-2 block">
             <div>
               <div className="flex justify-between text-xs uppercase font-semibold text-gray-600 dark:text-gray-400">

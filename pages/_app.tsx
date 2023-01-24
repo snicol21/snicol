@@ -6,10 +6,7 @@ import Head from 'next/head';
 
 import { MDXProvider } from '@mdx-js/react';
 
-import RealtimeCrypto from '../components/posts/realtime-crypto-chart';
-import TableValueConstructor from '../components/posts/table-value-constructor';
-
-const components = { TableValueConstructor, RealtimeCrypto }
+import * as components from '../components/posts';
 
 function MyApp({ Component, pageProps }) {
   return (

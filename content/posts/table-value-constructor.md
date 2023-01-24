@@ -5,10 +5,10 @@ title: "Table Value Constructor"
 categories: ["mssql"]
 description: "Use this simple utility for generating a table value selector statement in SQL."
 authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.jpg"
-imageUrl: "https://media.publit.io/file/table-value-constructor.png"
+imageUrl: "https://media.publit.io/file/tableValueConstructor/table-value-constructor.png"
 ---
 
-![](https://media.publit.io/file/table-value-constructor.png)
+![](https://media.publit.io/file/tableValueConstructor/table-value-constructor.png)
 
 ## What is a Table Value Constructor?
 

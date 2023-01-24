@@ -5,10 +5,10 @@ title: "Dynamic Table Profile"
 categories: ["mssql"]
 description: "How to dynamically profile every column of a table using TSQL"
 authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.jpg"
-imageUrl: "https://media.publit.io/file/dynamic-table-profile.jpg"
+imageUrl: "https://media.publit.io/file/dynamicTableProfile/dynamic-table-profile.jpg"
 ---
 
-![](https://media.publit.io/file/dynamic-table-profile.jpg)
+![](https://media.publit.io/file/dynamicTableProfile/dynamic-table-profile.jpg)
 
 ## Background
 
