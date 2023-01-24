@@ -1,10 +1,13 @@
-import "../shared/globals.css"
-import "prismjs/themes/prism-tomorrow.css"
-import Head from "next/head"
-import { ThemeProvider } from "next-themes"
-import { MDXProvider } from "@mdx-js/react"
-import TableValueConstructor from "../components/posts/table-value-constructor"
-import RealtimeCrypto from "../components/posts/realtime-crypto-chart"
+import '../shared/globals.css';
+import 'prismjs/themes/prism-tomorrow.css';
+
+import { ThemeProvider } from 'next-themes';
+import Head from 'next/head';
+
+import { MDXProvider } from '@mdx-js/react';
+
+import RealtimeCrypto from '../components/posts/realtime-crypto-chart';
+import TableValueConstructor from '../components/posts/table-value-constructor';
 
 const components = { TableValueConstructor, RealtimeCrypto }
 

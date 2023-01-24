@@ -1,14 +1,15 @@
-import Head from "next/head"
-import { GetStaticPropsContext } from "next"
-import Layout from "../../components/layouts/Layout"
-import { serialize } from "next-mdx-remote/serialize"
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
-import TechIcon from "../../components/elements/icons/TechIcon"
-import { getDateDisplay } from "../../shared/utils/date.util"
-import { getAllPosts, scriptDirectory } from "../../shared/utils/data.util"
-import { useEffect, useState } from "react"
-import { prismHighlightAll } from "../../shared/utils/prism.util"
-import { addCopyButtons } from "../../shared/utils/copy-button.util"
+import { GetStaticPropsContext } from 'next';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
+
+import TechIcon from '../../components/elements/icons/TechIcon';
+import Layout from '../../components/layouts/Layout';
+import { addCopyButtons } from '../../shared/utils/copy-button.util';
+import { getAllPosts, scriptDirectory } from '../../shared/utils/data.util';
+import { getDateDisplay } from '../../shared/utils/date.util';
+import { prismHighlightAll } from '../../shared/utils/prism.util';
 
 export type IScriptFrontMatter = {
   author: string

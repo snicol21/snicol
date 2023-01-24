@@ -1,6 +1,8 @@
-import { PlusIcon, TrashIcon } from "@heroicons/react/solid"
-import { ChangeEvent, useEffect, useState } from "react"
-import { prismHighlightAll } from "../../shared/utils/prism.util"
+import { ChangeEvent, useEffect, useState } from 'react';
+
+import { PlusIcon, TrashIcon } from '@heroicons/react/solid';
+
+import { prismHighlightAll } from '../../shared/utils/prism.util';
 
 type IState = {
   columns: string[]

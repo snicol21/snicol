@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react"
-import { Line } from "react-chartjs-2"
+import { useEffect, useRef, useState } from 'react';
+import { Line } from 'react-chartjs-2';
 
 const RealtimeCrypto = () => {
   const [currencies, setCurrencies] = useState([])

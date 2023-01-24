@@ -1,6 +1,6 @@
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
+import fs from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
 
 export const scriptDirectory = path.join(process.cwd(), "content", "posts")
 

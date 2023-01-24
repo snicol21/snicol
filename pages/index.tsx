@@ -1,9 +1,10 @@
-import Head from "next/head"
-import Layout from "../components/layouts/Layout"
-import ScriptPreview from "../components/modules/preview/ScriptPreview"
-import { getAllPosts, scriptDirectory } from "../shared/utils/data.util"
-import { getDateNumber } from "../shared/utils/date.util"
-import { IScriptFrontMatter } from "./posts/[slug]"
+import Head from 'next/head';
+
+import Layout from '../components/layouts/Layout';
+import ScriptPreview from '../components/modules/preview/ScriptPreview';
+import { getAllPosts, scriptDirectory } from '../shared/utils/data.util';
+import { getDateNumber } from '../shared/utils/date.util';
+import { IScriptFrontMatter } from './posts/[slug]';
 
 type IPost = IScriptFrontMatter & { slug: string }
 
