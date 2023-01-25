@@ -4,6 +4,7 @@ import "prismjs/themes/prism-tomorrow.css"
 import { ThemeProvider } from "next-themes"
 import Head from "next/head"
 import Link from "next/link"
+import Script from "next/script"
 import React from "react"
 
 import { MDXProvider, useMDXComponents } from "@mdx-js/react"
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <MDXProvider components={{ ...components, ...customHeaders }}>
         <ThemeProvider attribute="class" enableSystem={true}>
+          <Script src="https://cpwebassets.codepen.io/assets/embed/ei.js" />
           <Component {...pageProps} />
         </ThemeProvider>
       </MDXProvider>

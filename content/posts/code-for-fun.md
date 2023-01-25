@@ -128,11 +128,13 @@ echo "Hello, World!"
 
 5.  Keep learning and stay up to date on the latest technologies and trends.
 
+![Steps to Become a Coder](https://media.publit.io/file/codeForFun/steps-to-learn.jpg)
+
 > How do you make a programmer laugh on a Monday morning? <br/> Tell them a SQL joke on a Friday afternoon.
 
 ## Learn the Basics
 
-![Big 3 Basics](https://media.publit.io/file/codeForFun/html-css-js.png)
+![Programming 101](https://media.publit.io/file/codeForFun/programming-101.jpg)
 
 ### HTML: The Building Blocks of the Web
 
@@ -164,7 +166,20 @@ button.addEventListener("click", function () {
 })
 ```
 
+### HelloWorld CodePen
+
+<p
+  className="codepen"
+  data-height="300"
+  data-theme-id="dark"
+  data-default-tab="html,result"
+  data-slug-hash="poZVRRd"
+  data-editable="true"
+></p>
+
 > How do you catch a programmer? <br/> You paint the code red.
+
+## Chat with a Bot: Demo
 
 ## Coding: A Fun and Rewarding Career
 
