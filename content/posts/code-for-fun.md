@@ -10,84 +10,111 @@ imageUrl: "https://media.publit.io/file/codeForFun/code-for-fun.jpg"
 
 ![](https://media.publit.io/file/codeForFun/code-for-fun.jpg)
 
+> Why was the JavaScript developer sad? <br/> Because they didn't know how to 'null' their feelings.
+
 ## What is coding?
 
 Coding is the process of creating instructions for a computer to execute. It's like giving instructions to a robot to perform certain tasks.
 
 ![what is coding](https://media.publit.io/file/codeForFun/keyboard.png)
 
+> Why do programmers prefer dark mode? <br/> Because light attracts bugs.
+
 ## Why is coding important?
 
 Coding is important because it powers the technology that surrounds us. From smartphones to cars to video games, everything is made with code.
 
-## Different types of coding
+![Sentient Robot](https://media.publit.io/file/codeForFun/sentient-robot.png)
 
-There are many different types of coding, such as web development, game development, and app development. Each type of coding has its own unique set of skills and tools.
+> How do you know if a programmer is extroverted? <br/> They look at your shoes when they talk to you.
 
-## Lots of Different Coding Languages
+## Coding Languages
+
+![](https://media.publit.io/file/codeForFun/languages-most-used.png)
 
 ![](https://media.publit.io/file/codeForFun/languages-in-demand.jpg)
 
-![](https://media.publit.io/file/codeForFun/salaries-by-languages.png)
+![](https://media.publit.io/file/codeForFun/languages-salaries.png)
 
-## Here's what code looks like
+> Why did the developer go bankrupt? <br/> Because he used up all his cache.
 
 **Java**
 
 - Widely used for developing enterprise applications, mobile apps, and Android apps. (Google, Amazon, and Oracle)
+- The popular and loving games, Minecraft and Angry Birds were coded in Java.
+- Google Maps is coded in Java
 
-![](https://media.publit.io/file/codeForFun/java.png)
+```java
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
+}
+```
 
 **Python**
 
+- No, not the snake. 🐍
 - High-level programming language that is used for a wide range of purposes, including data analysis, machine learning, and web development. (Google, Facebook, and Netflix)
 
-![](https://media.publit.io/file/codeForFun/python.png)
+```python
+print("Hello, World!")
+```
 
 **C++**
 
 - Powerful programming language that is used for developing system software, video games, and desktop applications. (Microsoft, Amazon, and Apple)
 
-![](https://media.publit.io/file/codeForFun/c.png)
+```c
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+```
 
 **JavaScript**
 
 - Popular programming language that is primarily used for creating interactive web pages and web applications. (Google, Facebook, and Amazon)
 
-![](https://media.publit.io/file/codeForFun/javascript.png)
+```javascript
+console.log("Hello, World!")
+```
 
 **C# (C-Sharp)**
 
 - General-purpose programming language that is used for developing Windows desktop and mobile apps. (Microsoft and Unity)
 
-![](https://media.publit.io/file/codeForFun/c-sharp.png)
+```csharp
+using System;
 
-## Career Opportunities in Coding
+class HelloWorld
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
+```
 
-Web Developer
+**PowerShell**
 
-- Responsible for designing and building websites.
-- Average salary: $73,000/year
+- Command-line shell and scripting language that is used for automating tasks and managing systems. It can also be used for automating repetitive tasks, such as backups and software installations, and for automating the creation and management of virtual machines.
 
-Mobile App Developer
+```powershell
+Write-Host "Hello, World!"
+```
 
-- Develops apps for smartphones and tablets.
-- Average salary: $95,000/year
+**Bash**
 
-Software Developer
+- Bash (short for "Bourne-Again Shell") is a Unix shell and command-line interface. It is the default shell on most Linux and macOS systems, as well as on other Unix-based operating systems. Bash is used to execute commands and run scripts, and it provides a wide range of features for interacting with the operating system and other programs.
 
-- Develops and maintains software applications.
-- Average salary: $104,000/year
+```bash
+echo "Hello, World!"
+```
 
-Data Scientist
-
-- Analyzes and interprets data using coding and statistical techniques.
-- Average salary: $120,000/year
-
-Machine Learning Engineer
-
-- Develops and implements machine learning models and algorithms.
-- Average salary: $129,000/year
+> Why do Java developers wear glasses? <br/> Because they don't C#
 
 ## Steps to Becoming a Coder
 
@@ -101,16 +128,46 @@ Machine Learning Engineer
 
 5.  Keep learning and stay up to date on the latest technologies and trends.
 
+> How do you make a programmer laugh on a Monday morning? <br/> Tell them a SQL joke on a Friday afternoon.
+
 ## Learn the Basics
+
+![Big 3 Basics](https://media.publit.io/file/codeForFun/html-css-js.png)
 
 ### HTML: The Building Blocks of the Web
 
 HTML (Hypertext Markup Language) is a language used to create the structure and layout of web pages. It is the backbone of all websites, and it is used to create headings, paragraphs, links, images and other elements that make up a webpage. HTML uses tags, which are enclosed in angle brackets, to define the different types of elements on a webpage.
 
+```html
+<h1>Hello World!</h1>
+<button id="myButton">Click me</button>
+```
+
 ### CSS: The Style of the Web
 
 CSS (Cascading Style Sheets) is a language used to add style and layout to web pages. It is used to change the font, color, spacing, and other visual elements of web pages. It allows you to separate the presentation of a webpage from its structure, making it easier to maintain and update the design of a website. CSS uses selectors, which identify the HTML elements to be styled, and declarations, which specify the styles to be applied.
 
+```css
+h1 {
+  color: blue;
+}
+```
+
+### Javascript: The Interactivity of the Web
+
+JavaScript is the programming language that makes web pages interactive and dynamic. It is used to add behavior and logic to websites, such as creating responsive forms, interactive maps, and dynamic content updates. It allows web developers to create complex and dynamic user interfaces, and to make web pages more responsive to user input and interaction.
+
+```javascript
+var button = document.getElementById("myButton")
+button.addEventListener("click", function () {
+  alert("Hello World!")
+})
+```
+
+> How do you catch a programmer? <br/> You paint the code red.
+
 ## Coding: A Fun and Rewarding Career
 
 Coding can be a fun and rewarding career. It allows you to use your creativity to build and create things that make a difference in the world. With practice and determination, anyone can learn to code and become a successful coder.
+
+![Programmer Definition](https://media.publit.io/file/codeForFun/programmer-definition.jpg)

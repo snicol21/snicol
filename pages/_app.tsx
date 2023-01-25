@@ -1,14 +1,14 @@
-import '../shared/globals.css';
-import 'prismjs/themes/prism-tomorrow.css';
+import "../shared/globals.css"
+import "prismjs/themes/prism-tomorrow.css"
 
-import { ThemeProvider } from 'next-themes';
-import Head from 'next/head';
-import Link from 'next/link';
-import React from 'react';
+import { ThemeProvider } from "next-themes"
+import Head from "next/head"
+import Link from "next/link"
+import React from "react"
 
-import { MDXProvider } from '@mdx-js/react';
+import { MDXProvider, useMDXComponents } from "@mdx-js/react"
 
-import * as components from '../components/posts';
+import * as components from "../components/posts"
 
 function HeadingLink({ type, children, ...props }) {
   const header = React.createElement(type, props, children)

@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link"
 
-import { IScriptFrontMatter } from '../../../pages/posts/[slug]';
-import { getDateDisplay } from '../../../shared/utils/date.util';
-import TechIcon from '../../elements/icons/TechIcon';
+import { IScriptFrontMatter } from "../../../pages/posts/[slug]"
+import { getDateDisplay } from "../../../shared/utils/date.util"
+import TechIcon from "../../elements/icons/TechIcon"
 
 type Props = IScriptFrontMatter & { slug: string }
 

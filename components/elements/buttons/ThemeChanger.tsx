@@ -1,7 +1,7 @@
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 
-import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
+import { MoonIcon, SunIcon } from "@heroicons/react/24/solid"
 
 const ThemeChanger = () => {
   const { systemTheme, theme, setTheme } = useTheme()
