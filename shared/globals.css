@@ -29,3 +29,8 @@
 .prose .heading-link {
   text-decoration: none;
 }
+
+.prose h2 {
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
