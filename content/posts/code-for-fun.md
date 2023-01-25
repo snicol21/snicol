@@ -1,6 +1,6 @@
 ---
 author: "Spencer Nicol"
-date: "2022-01-24"
+date: "2023-01-24"
 title: "Coding for Fun and a Living"
 categories: ["html5", "css", "javascript"]
 description: "Learn about the exciting world of coding and how it can lead to a fulfilling career"
@@ -174,6 +174,7 @@ button.addEventListener("click", function () {
   data-theme-id="dark"
   data-default-tab="html,result"
   data-slug-hash="poZVRRd"
+  data-user="snicol21"
   data-editable="true"
 ></p>
 

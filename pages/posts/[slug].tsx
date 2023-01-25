@@ -40,6 +40,9 @@ const ScriptPage = ({ source, frontMatter }: Props) => {
     if (navigator && navigator.clipboard) {
       addCopyButtons(navigator.clipboard)
     }
+    if (window && window["__CPEmbed"]) {
+      window["__CPEmbed"](".codepen")
+    }
   }
 
   return (

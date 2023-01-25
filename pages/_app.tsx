@@ -7,7 +7,7 @@ import Link from "next/link"
 import Script from "next/script"
 import React from "react"
 
-import { MDXProvider, useMDXComponents } from "@mdx-js/react"
+import { MDXProvider } from "@mdx-js/react"
 
 import * as components from "../components/posts"
 
@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <MDXProvider components={{ ...components, ...customHeaders }}>
         <ThemeProvider attribute="class" enableSystem={true}>
-          <Script src="https://cpwebassets.codepen.io/assets/embed/ei.js" />
+          <Script async src="https://cpwebassets.codepen.io/assets/embed/ei.js" />
           <Component {...pageProps} />
         </ThemeProvider>
       </MDXProvider>
