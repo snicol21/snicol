@@ -180,6 +180,34 @@ button.addEventListener("click", function () {
 
 > How do you catch a programmer? <br/> You paint the code red.
 
+## Examples
+
+### Card
+
+<p
+  className="codepen"
+  data-height="550"
+  data-theme-id="dark"
+  data-default-tab="html,result"
+  data-slug-hash="JjBvNbr"
+  data-editable="true"
+  data-user="snicol21"
+></p>
+
+### Card with Animation
+
+<p
+  className="codepen"
+  data-height="600"
+  data-theme-id="dark"
+  data-default-tab="html,result"
+  data-slug-hash="MWBGmpe"
+  data-editable="true"
+  data-user="snicol21"
+></p>
+
+### CSS Art
+
 ## Chat with a Bot: Demo
 
 ## Coding: A Fun and Rewarding Career
