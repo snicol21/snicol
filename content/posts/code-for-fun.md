@@ -210,6 +210,16 @@ button.addEventListener("click", function () {
 
 ## Chat with a Bot: Demo
 
+<p
+  class="codepen"
+  data-height="900"
+  data-theme-id="dark"
+  data-default-tab="result"
+  data-slug-hash="VwBxbVq"
+  data-editable="true"
+  data-user="snicol21"
+></p>
+
 ## Coding: A Fun and Rewarding Career
 
 Coding can be a fun and rewarding career. It allows you to use your creativity to build and create things that make a difference in the world. With practice and determination, anyone can learn to code and become a successful coder.
