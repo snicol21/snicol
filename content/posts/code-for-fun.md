@@ -206,8 +206,6 @@ button.addEventListener("click", function () {
   data-user="snicol21"
 ></p>
 
-### CSS Art
-
 ## Chat with a Bot: Demo
 
 <p
