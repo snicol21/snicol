@@ -209,7 +209,7 @@ button.addEventListener("click", function () {
 ## Chat with a Bot: Demo
 
 <p
-  class="codepen"
+  className="codepen"
   data-height="680"
   data-theme-id="dark"
   data-default-tab="result"
