@@ -212,7 +212,7 @@ button.addEventListener("click", function () {
 
 <p
   class="codepen"
-  data-height="900"
+  data-height="700"
   data-theme-id="dark"
   data-default-tab="result"
   data-slug-hash="VwBxbVq"
