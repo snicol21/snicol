@@ -70,7 +70,7 @@ const ScriptPage = ({ source, frontMatter }: Props) => {
                 </div>
                 <div className="relative flex-shrink-0 h-10 w-10">
                   <span className="sr-only">{frontMatter.author}</span>
-                  <Image className="rounded-full m-0" style={{ margin: 0 }} src={frontMatter.authorImageUrl} alt={frontMatter.author} fill />
+                  <Image className="rounded-full m-0" style={{ margin: 0 }} src={frontMatter.authorImageUrl} alt={frontMatter.author} fill loading="eager"/>
                 </div>
               </div>
             </div>
