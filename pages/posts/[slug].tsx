@@ -49,6 +49,7 @@ const ScriptPage = ({ source, frontMatter }: Props) => {
     <Layout>
       <Head>
         <title>{frontMatter.title}</title>
+        <meta name="description" content={frontMatter.description}></meta>
       </Head>
       <div className="relative py-16 overflow-hidden">
         <div className="prose lg:prose-xl xl:prose-2xl dark:prose-dark mx-auto">

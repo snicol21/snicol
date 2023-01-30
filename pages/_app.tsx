@@ -47,6 +47,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Spencer Nicol's personal website that contains learning from his career as a software engineer."></meta>
       </Head>
       <MDXProvider components={components}>
         <ThemeProvider attribute="class" enableSystem={true}>
