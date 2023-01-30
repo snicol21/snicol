@@ -21,11 +21,6 @@
   margin: 0;
 }
 
-.prose img {
-  border-radius: 10px;
-  width: 100%;
-}
-
 .prose .heading-link {
   text-decoration: none;
 }
@@ -33,4 +28,17 @@
 .prose h2 {
   border-bottom: 1px solid;
   padding-bottom: 5px;
+}
+
+.prose .image-container {
+  position: relative;
+  width: 100%;
+}
+
+.prose .image-container .image {
+  border-radius: 10px;
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
 }

@@ -3,15 +3,16 @@ import "prismjs/themes/prism-tomorrow.css"
 
 import { ThemeProvider } from "next-themes"
 import Head from "next/head"
+import Image from "next/image"
 import Link from "next/link"
 import Script from "next/script"
 import React from "react"
 
 import { MDXProvider } from "@mdx-js/react"
 
-import * as components from "../components/posts"
+import * as posts from "../components/posts"
 
-function HeadingLink({ type, children, ...props }) {
+const HeadingLink = ({ type, children, ...props }) => {
   const header = React.createElement(type, props, children)
   if (props.id) {
     return (
@@ -23,7 +24,15 @@ function HeadingLink({ type, children, ...props }) {
   return header
 }
 
-const customHeaders = {
+const ResponsiveImage = (props) => (
+  <span className="image-container">
+    <Image className="image" alt={props.alt} fill {...props}></Image>
+  </span>
+)
+
+const components = {
+  ...posts,
+  img: ResponsiveImage,
   h1: (props) => <HeadingLink type="h1" {...props} />,
   h2: (props) => <HeadingLink type="h2" {...props} />,
   h3: (props) => <HeadingLink type="h3" {...props} />,
@@ -38,7 +47,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
       </Head>
-      <MDXProvider components={{ ...components, ...customHeaders }}>
+      <MDXProvider components={components}>
         <ThemeProvider attribute="class" enableSystem={true}>
           <Script async src="https://cpwebassets.codepen.io/assets/embed/ei.js" />
           <Component {...pageProps} />
