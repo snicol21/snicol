@@ -1,18 +1,18 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { IScriptFrontMatter } from "../../../pages/posts/[slug]"
+import { IPost } from "../../../pages"
 import { getDateDisplay } from "../../../shared/utils/date.util"
 import TechIcon from "../../elements/icons/TechIcon"
 
-type Props = IScriptFrontMatter & { slug: string }
+type Props = IPost
 
-const ScriptPreview = ({ slug, author, title, date, categories, description, authorImageUrl, imageUrl }: Props) => {
+const ScriptPreview = ({ slug, author, title, date, categories, description, authorImageUrl, imageUrl, imageLoading }: Props) => {
   const dateFormatted = getDateDisplay(date)
   return (
     <Link href={`/posts/${slug}`} className="flex flex-col rounded-lg shadow-lg dark:shadow-none overflow-hidden">
       <div className="relative h-48 w-full flex-shrink-0">
-        <Image className="object-cover" fill src={imageUrl} alt={title} />
+        <Image className="object-cover" fill src={imageUrl} alt={title} loading={imageLoading} />
       </div>
       <div className="flex-1 p-6 flex flex-col justify-between dark:bg-gray-800">
         <div className="flex-1">

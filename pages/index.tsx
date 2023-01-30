@@ -6,7 +6,7 @@ import { getAllPosts, scriptDirectory } from "../shared/utils/data.util"
 import { getDateNumber } from "../shared/utils/date.util"
 import { IScriptFrontMatter } from "./posts/[slug]"
 
-type IPost = IScriptFrontMatter & { slug: string }
+export type IPost = IScriptFrontMatter & { slug: string; imageLoading: "lazy" | "eager" }
 
 type Props = {
   posts: IPost[]
@@ -26,9 +26,10 @@ const Home = ({ posts }: Props) => {
           <div className="mt-6 pt-10 grid gap-16">
             {posts
               .sort((a: IPost, b: IPost) => getDateNumber(b.date) - getDateNumber(a.date))
-              .map((post) => (
-                <ScriptPreview key={post.slug} {...post} />
-              ))}
+              .map((post, index) => {
+                index < 2 ? (post.imageLoading = "eager") : (post.imageLoading = "lazy")
+                return <ScriptPreview key={post.slug} {...post} />
+              })}
           </div>
         </div>
       </div>
