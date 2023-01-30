@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 import { IScriptFrontMatter } from "../../../pages/posts/[slug]"
@@ -10,8 +11,8 @@ const ScriptPreview = ({ slug, author, title, date, categories, description, aut
   const dateFormatted = getDateDisplay(date)
   return (
     <Link href={`/posts/${slug}`} className="flex flex-col rounded-lg shadow-lg dark:shadow-none overflow-hidden">
-      <div className="flex-shrink-0">
-        <img className="h-48 w-full object-cover" src={imageUrl} alt="" />
+      <div className="relative h-48 w-full flex-shrink-0">
+        <Image className="object-cover" fill src={imageUrl} alt={title} />
       </div>
       <div className="flex-1 p-6 flex flex-col justify-between dark:bg-gray-800">
         <div className="flex-1">
@@ -30,7 +31,7 @@ const ScriptPreview = ({ slug, author, title, date, categories, description, aut
         <div className="mt-6 flex items-center">
           <div className="flex-shrink-0">
             <span className="sr-only">{author}</span>
-            <img className="h-10 w-10 rounded-full" src={authorImageUrl} alt="" />
+            <Image className="h-10 w-10 rounded-full" src={authorImageUrl} alt={author} width="40" height="40" />
           </div>
           <div className="ml-3">
             <p className="text-sm font-medium">{author}</p>

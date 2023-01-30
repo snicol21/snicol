@@ -2,6 +2,7 @@ import { GetStaticPropsContext } from "next"
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
 import { serialize } from "next-mdx-remote/serialize"
 import Head from "next/head"
+import Image from "next/image"
 import { useEffect, useState } from "react"
 import rehypeSlug from "rehype-slug"
 
@@ -67,9 +68,9 @@ const ScriptPage = ({ source, frontMatter }: Props) => {
                     </span>
                   ))}
                 </div>
-                <div className="flex-shrink-0 h-10 w-10">
+                <div className="relative flex-shrink-0 h-10 w-10">
                   <span className="sr-only">{frontMatter.author}</span>
-                  <img className="h-10 w-10 rounded-full m-0" style={{ margin: 0 }} src={frontMatter.authorImageUrl} alt="" />
+                  <Image className="rounded-full m-0" style={{ margin: 0 }} src={frontMatter.authorImageUrl} alt={frontMatter.author} fill />
                 </div>
               </div>
             </div>
