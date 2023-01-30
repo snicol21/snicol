@@ -1,3 +1,4 @@
+import "@fontsource/inter"
 import "../shared/globals.css"
 import "prismjs/themes/prism-tomorrow.css"
 
