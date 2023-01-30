@@ -31,7 +31,7 @@ const ScriptPreview = ({ slug, author, title, date, categories, description, aut
         <div className="mt-6 flex items-center">
           <div className="flex-shrink-0">
             <span className="sr-only">{author}</span>
-            <Image className="h-10 w-10 rounded-full" src={authorImageUrl} alt={author} width="40" height="40" />
+            <Image className="h-10 w-10 rounded-full" src={authorImageUrl} alt={author} width="40" height="40" loading="eager" />
           </div>
           <div className="ml-3">
             <p className="text-sm font-medium">{author}</p>
