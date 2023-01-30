@@ -4,11 +4,11 @@ date: "2023-01-24"
 title: "Coding for Fun and a Living"
 categories: ["html5", "css", "javascript"]
 description: "Learn about the exciting world of coding and how it can lead to a fulfilling career"
-authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.jpg"
-imageUrl: "https://media.publit.io/file/codeForFun/code-for-fun.jpg"
+authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.webp"
+imageUrl: "https://media.publit.io/file/codeForFun/code-for-fun.webp"
 ---
 
-![](https://media.publit.io/file/codeForFun/code-for-fun.jpg)
+![](https://media.publit.io/file/codeForFun/code-for-fun.webp)
 
 > Why was the JavaScript developer sad? <br/> Because they didn't know how to 'null' their feelings.
 
@@ -16,7 +16,7 @@ imageUrl: "https://media.publit.io/file/codeForFun/code-for-fun.jpg"
 
 Coding is the process of creating instructions for a computer to execute. It's like giving instructions to a robot to perform certain tasks.
 
-![what is coding](https://media.publit.io/file/codeForFun/keyboard.png)
+![what is coding](https://media.publit.io/file/codeForFun/keyboard.webp)
 
 > Why do programmers prefer dark mode? <br/> Because light attracts bugs.
 
@@ -24,17 +24,17 @@ Coding is the process of creating instructions for a computer to execute. It's l
 
 Coding is important because it powers the technology that surrounds us. From smartphones to cars to video games, everything is made with code.
 
-![Sentient Robot](https://media.publit.io/file/codeForFun/sentient-robot.png)
+![Sentient Robot](https://media.publit.io/file/codeForFun/sentient-robot.webp)
 
 > How do you know if a programmer is extroverted? <br/> They look at your shoes when they talk to you.
 
 ## Coding Languages
 
-![](https://media.publit.io/file/codeForFun/languages-most-used.png)
+![](https://media.publit.io/file/codeForFun/languages-most-used.webp)
 
-![](https://media.publit.io/file/codeForFun/languages-in-demand.jpg)
+![](https://media.publit.io/file/codeForFun/languages-in-demand.webp)
 
-![](https://media.publit.io/file/codeForFun/languages-salaries.png)
+![](https://media.publit.io/file/codeForFun/languages-salaries.webp)
 
 > Why did the developer go bankrupt? <br/> Because he used up all his cache.
 
@@ -128,13 +128,13 @@ echo "Hello, World!"
 
 5.  Keep learning and stay up to date on the latest technologies and trends.
 
-![Steps to Become a Coder](https://media.publit.io/file/codeForFun/steps-to-learn.jpg)
+![Steps to Become a Coder](https://media.publit.io/file/codeForFun/steps-to-learn.webp)
 
 > How do you make a programmer laugh on a Monday morning? <br/> Tell them a SQL joke on a Friday afternoon.
 
 ## Learn the Basics
 
-![Programming 101](https://media.publit.io/file/codeForFun/programming-101.jpg)
+![Programming 101](https://media.publit.io/file/codeForFun/programming-101.webp)
 
 ### HTML: The Building Blocks of the Web
 
@@ -222,4 +222,4 @@ button.addEventListener("click", function () {
 
 Coding can be a fun and rewarding career. It allows you to use your creativity to build and create things that make a difference in the world. With practice and determination, anyone can learn to code and become a successful coder.
 
-![Programmer Definition](https://media.publit.io/file/codeForFun/programmer-definition.jpg)
+![Programmer Definition](https://media.publit.io/file/codeForFun/programmer-definition.webp)

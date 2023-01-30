@@ -4,11 +4,11 @@ date: "2021-09-06"
 title: "Table Value Constructor"
 categories: ["mssql"]
 description: "Use this simple utility for generating a table value selector statement in SQL."
-authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.jpg"
-imageUrl: "https://media.publit.io/file/tableValueConstructor/table-value-constructor.png"
+authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.webp"
+imageUrl: "https://media.publit.io/file/tableValueConstructor/table-value-constructor.webp"
 ---
 
-![](https://media.publit.io/file/tableValueConstructor/table-value-constructor.png)
+![](https://media.publit.io/file/tableValueConstructor/table-value-constructor.webp)
 
 ## What is a Table Value Constructor?
 

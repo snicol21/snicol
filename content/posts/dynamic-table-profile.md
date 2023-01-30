@@ -4,11 +4,11 @@ date: "2021-09-13"
 title: "Dynamic Table Profile"
 categories: ["mssql"]
 description: "How to dynamically profile every column of a table using TSQL"
-authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.jpg"
-imageUrl: "https://media.publit.io/file/dynamicTableProfile/dynamic-table-profile.jpg"
+authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.webp"
+imageUrl: "https://media.publit.io/file/dynamicTableProfile/dynamic-table-profile.webp"
 ---
 
-![](https://media.publit.io/file/dynamicTableProfile/dynamic-table-profile.jpg)
+![](https://media.publit.io/file/dynamicTableProfile/dynamic-table-profile.webp)
 
 ## Background
 
@@ -48,7 +48,7 @@ I wanted to share a series of scripts that I wrote which will walk you through a
    ) AS tbl ([Player],[Team],[Number]);
    ```
 
-   ![](https://media.publit.io/file/dynamicTableProfile/data_example.png)
+   ![](https://media.publit.io/file/dynamicTableProfile/data_example.webp)
 
 2. Now let's use the system columns from SQL Server to derive and create a table variable of the metadata of our created field. This will be used as a way to iterate over the columns of our entity.
 
@@ -120,9 +120,9 @@ I wanted to share a series of scripts that I wrote which will walk you through a
 
    - Generated SQL Case Statement that we've saved into a table called **[dbo].[Profile_Pivot]**
 
-     ![](https://media.publit.io/file/dynamicTableProfile/generated-case-statement.png)
+     ![](https://media.publit.io/file/dynamicTableProfile/generated-case-statement.webp)
 
-     ![](https://media.publit.io/file/dynamicTableProfile/generated_case-statement-data.png)
+     ![](https://media.publit.io/file/dynamicTableProfile/generated_case-statement-data.webp)
 
 4. Now all we have left to do is some calculations against this pivoted profile table.
 
@@ -193,7 +193,7 @@ I wanted to share a series of scripts that I wrote which will walk you through a
      ORDER BY 1
      ```
 
-     ![](https://media.publit.io/file/dynamicTableProfile/output.png)
+     ![](https://media.publit.io/file/dynamicTableProfile/output.webp)
 
 **Magic!**
 
