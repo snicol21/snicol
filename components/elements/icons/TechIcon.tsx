@@ -33,6 +33,8 @@ const TechIcon = ({ name, className = "" }) => {
         return { name: "Firebase", ref: "#firebase" }
       case "gatsby":
         return { name: "Gatsby", ref: "#gatsby" }
+      case "gcp":
+        return { name: "Google Cloud Platform", ref: "#gcp" }
       case "git":
         return { name: "Git", ref: "#git" }
       case "graphql":
@@ -71,6 +73,8 @@ const TechIcon = ({ name, className = "" }) => {
         return { name: "Sass", ref: "#sass" }
       case "tailwind":
         return { name: "Tailwind", ref: "#tailwind" }
+      case "terraform":
+        return { name: "Terraform", ref: "#terraform" }
       case "typescript":
         return { name: "Typescript", ref: "#typescript" }
       case "yaml":

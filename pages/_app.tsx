@@ -1,6 +1,6 @@
 import "@fontsource/inter"
 import "../shared/globals.css"
-import "prismjs/themes/prism-tomorrow.css"
+import "prismjs/themes/prism-tomorrow.min.css"
 
 import { ThemeProvider } from "next-themes"
 import Head from "next/head"
