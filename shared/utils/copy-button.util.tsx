@@ -1,6 +1,7 @@
 export function addCopyButtons(clipboard) {
   document.querySelectorAll("pre > code").forEach((codeBlock) => {
-    var button = document.createElement("button")
+    const button = document.createElement("button")
+
     button.className =
       "inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     button.type = "button"
@@ -8,7 +9,7 @@ export function addCopyButtons(clipboard) {
     button.addEventListener("mouseout", () => (button.style.opacity = "0.2"))
     button.addEventListener("mouseover", () => (button.style.opacity = "0.9"))
 
-    var span = document.createElement("span")
+    const span = document.createElement("span")
     span.style.width = "3rem"
     span.innerText = "Copy"
 
@@ -30,8 +31,13 @@ export function addCopyButtons(clipboard) {
       )
     })
 
-    var pre = codeBlock.parentNode as HTMLElement
-    pre.style.position = "relative"
-    pre.prepend(button)
+    const div = document.createElement("div")
+    div.style.position = "relative"
+
+    const pre = codeBlock.parentElement
+    pre.parentNode.insertBefore(div, pre)
+
+    div.appendChild(button)
+    div.appendChild(pre)
   })
 }
