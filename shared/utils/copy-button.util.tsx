@@ -4,7 +4,7 @@ export function addCopyButtons(clipboard) {
     button.className =
       "inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     button.type = "button"
-    button.style.cssText = "position: absolute; right: 0; margin: -0.7rem 0.5rem 0.5rem; opacity: 0.2"
+    button.style.cssText = "position: absolute; right: 0; top: 0; margin: 0.5rem; opacity: 0.2"
     button.addEventListener("mouseout", () => (button.style.opacity = "0.2"))
     button.addEventListener("mouseover", () => (button.style.opacity = "0.9"))
 
@@ -30,8 +30,8 @@ export function addCopyButtons(clipboard) {
       )
     })
 
-    var pre = codeBlock.parentNode
-    pre.parentElement.style.position = "relative"
+    var pre = codeBlock.parentNode as HTMLElement
+    pre.style.position = "relative"
     pre.prepend(button)
   })
 }
