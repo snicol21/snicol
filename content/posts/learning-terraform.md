@@ -8,7 +8,7 @@ authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.webp"
 imageUrl: "https://media.publit.io/file/terraformGCP/gcp-terraform.webp"
 ---
 
-![](https://media.publit.io/file/terraformGCP/gcp-terraform.webp)
+![Terraform + Google Cloud Platform](https://media.publit.io/file/terraformGCP/gcp-terraform.webp)
 
 ## What is Terraform?
 
@@ -16,7 +16,9 @@ Terraform, developed by HashiCorp, is an open-source Infrastructure-as-code (IaC
 
 Many prefer Terraform over other IaC tools because it allows users to use the same configuration language to define the same infrastructure on different cloud providers, making it quick and easy to move resources between them without the need to go back and rewrite your code.
 
-## Configuration
+![Infrastructure as code](https://media.publit.io/file/terraformGCP/infrastructure-as-code.webp)
+
+## Terraform HCL
 
 Terraform HCL (HashiCorp Configuration Language) is a custom language developed by HashiCorp for describing infrastructure configurations. HCL is a declarative language, which means that it uses human-readable syntax for describing what should be done rather than the steps necessary to do it. HCL supports the construction of complex data structures and has built-in features like expressions, variables, and conditionals.
 
@@ -30,7 +32,7 @@ resource "local_file" "sample" {
 }
 ```
 
-### Shell commands:
+## Basic Shell commands:
 
 1. `terraform init` initializes a working directory containing Terraform configuration files. It is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. It is safe to run this command multiple times.
 
@@ -220,3 +222,108 @@ output "name1" {
   value = data.local_file.name.content
 }
 ```
+
+## What is GCP?
+
+Google Cloud Platform (GCP) is an infrastructure as a service that can be used with Terraform.
+
+Terraform supports GCP in various ways, including Google Cloud Platform (GCP) resource, data source, and module resources.
+
+Developers can use Terraform to provision and manage GCP resources, including compute and storage, as well as to configure settings, such as account and access control settings. In addition, Terraform can be used to create custom GCP resources and manage deployments, such as creating an automated deployment pipeline.
+
+With Terraform, users can efficiently manage GCP resources and reduce the need for manual, manual tasks.
+
+![Google Cloud Platform Provider](https://media.publit.io/file/terraformGCP/gcp-provider.webp)
+
+### Create a Google Cloud Free Trial Account
+
+1. Visit the Google Cloud Platform website, and click the `Try It Free` button.
+
+2. Enter your personal information and create an account.
+
+3. Choose your country or region.
+
+4. Read and accept the Terms of Service and Privacy Policy.
+
+5. Choose the type of account you would like to use.
+
+6. Enter your payment information, including a valid credit card. You will not be charged if you use the free trial options.
+
+7. Select the options you want to include in your trial account.
+
+8. Follow any additional steps required by the setup wizard to complete your account setup.
+
+### Create a new project
+
+1. Log into the Google Cloud Platform Console.
+
+2. In the top right corner, click the radio button next to the project you wish to add a project to.
+
+3. Click on the `New Project` button.
+
+4. Enter the project name and select the data center region for the project.
+
+5. Click on `Create`.
+
+6. The project will be added to the list of active project in the Google Cloud Platform Console.
+
+### Create a Service Account
+
+A service account allows you to authenticate to Google Cloud Platform and access the necessary APIs to deploy and manage infrastructure with Terraform. With the service account, you can grant the Terraform infrastructure running in the cloud access to other Google Cloud Platform resources without having to enter credentials.
+
+1. Log in to the Google Cloud Platform Console and select your project from the drop down window.
+
+2. Select `IAM & Admin` option from the left sidebar and go to `Service Accounts` tab.
+
+3. Click on `Create service account` from the top.
+
+4. Enter the service account name and brief description of use.
+
+5. Enter the email address you want associated with the service account.
+
+6. Select the IAM roles you wish to assign to the service account.
+
+7. Finally, select `furnish a new private key` and click `Create` button.
+
+This will create the service account with the selected roles, email address and private key. You can download the private key and use it while authenticating with this service account.
+
+## Get started with GCP as Terraform Provider
+
+The Google provider is used to configure your [Google Cloud Platform infrastructure](https://registry.terraform.io/providers/hashicorp/google/latest/docs).
+
+- Create Terraform script that includes google provider
+
+  ```hcl
+  // main.tf
+  terraform {
+    required_providers {
+      google = {
+        source  = "hashicorp/google"
+        version = "4.51.0"
+      }
+    }
+  }
+
+  provider "google" {
+    # Configuration options
+  }
+  ```
+
+- Run shell script from main.tf directory
+
+  ```bash
+  terraform init
+  ```
+
+- Connect with GCP
+  - Google Provider Configuration: projectId, zone, region
+  - Multiple ways to authenticate with GCP
+    1. Username/password (_gcloud auth application-default logic_)
+    2. Google Cloud VM
+    3. Service account keys (_preferred in production_)
+  - Create Google Cloud Storage bucket
+    ```hcl
+    resource "google_storage_bucket" "gcs1" {
+      name = "bucketname"
+    }
+    ```
