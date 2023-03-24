@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <meta name="msapplication-navbutton-color" media="(prefers-color-scheme: light)" content="white" />
           <meta name="msapplication-navbutton-color" media="(prefers-color-scheme: dark)" content="#0F141A" />
           <!-- iOS Safari -->
-          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         </Head>
         <body className="bg-white dark:bg-mat-black text-gray-900 dark:text-white">
           <Main />
