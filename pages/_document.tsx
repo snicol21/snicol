@@ -17,13 +17,13 @@ class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="msapplication-TileColor" content="#da532c" />
-          <!-- Chrome, Firefox OS and Opera -->
+          {/* Chrome, Firefox OS and Opera */}
           <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F141A" />
-          <!-- Windows Phone -->
+          {/* Windows Phone */}
           <meta name="msapplication-navbutton-color" media="(prefers-color-scheme: light)" content="white" />
           <meta name="msapplication-navbutton-color" media="(prefers-color-scheme: dark)" content="#0F141A" />
-          <!-- iOS Safari -->
+          {/* iOS Safari */}
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         </Head>
         <body className="bg-white dark:bg-mat-black text-gray-900 dark:text-white">
