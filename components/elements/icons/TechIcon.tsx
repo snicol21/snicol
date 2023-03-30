@@ -43,6 +43,8 @@ const TechIcon = ({ name, className = "" }) => {
         return { name: "Gulp", ref: "#gulp" }
       case "html5":
         return { name: "HTML5", ref: "#html5" }
+      case "java":
+        return { name: "Java", ref: "#java" }
       case "javascript":
         return { name: "Javascript", ref: "#javascript" }
       case "lodash":
