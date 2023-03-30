@@ -109,20 +109,18 @@ For example, if we call binarySearch with an array of size 8, it will take at mo
 - The number of operations grows at an increasing rate as the input size grows.
 
 ```java
-public static int power(int base, int exponent) {
-  if (exponent == 0) {
-    return 1;
+public static int fibonacci(int n) {
+  if (n <= 1) {
+    return n;
   } else {
-    return base * power(base, exponent - 1);
+    return fibonacci(n-1) + fibonacci(n-2);
   }
 }
 ```
 
-This is a recursive function that computes the result of raising a base to a given exponent.
+This is a recursive method that calculates the nth Fibonacci number. It has an exponential time complexity of O(2^n), because each call to fibonacci results in two more calls, leading to an exponentially increasing number of function calls as n gets larger.
 
-For example, if we call `power(2, 3)`, the algorithm will recursively call itself with arguments 2 and 2, then with arguments 2 and 1, and finally with arguments 2 and 0, which is the base case. This results in a total of 4 function calls.
-
-If we call `power(2, 10)`, however, the algorithm will make 1,023 function calls, and if we call `power(2, 20)`, it will make over a million function calls!
+To see the exponential time complexity of this method in action, try running it with a large input value, like fibonacci(40). You'll notice that it takes a long time to compute the result, because the number of function calls grows exponentially with the input value.
 
 ### Cheat Sheet
 
