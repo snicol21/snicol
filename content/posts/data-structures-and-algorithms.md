@@ -1,11 +1,11 @@
 ---
-author: "Spencer Nicol"
-date: "2023-03-29"
-title: "Data Structures and Algorithms"
-categories: ["java"]
+author: 'Spencer Nicol'
+date: '2023-03-29'
+title: 'Data Structures and Algorithms'
+categories: ['java']
 description: "Cliff notes from Mosh Hamedani's course for developer's who never took a computer science course"
-authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.webp"
-imageUrl: "https://media.publit.io/file/dataStructuresAndAlgorithms/Data-Structures-and-Algorithms.jpg"
+authorImageUrl: 'https://media.publit.io/file/spencer/spencer-small.webp'
+imageUrl: 'https://media.publit.io/file/dataStructuresAndAlgorithms/Data-Structures-and-Algorithms.jpg'
 ---
 
 ![](https://media.publit.io/file/dataStructuresAndAlgorithms/Data-Structures-and-Algorithms.jpg)

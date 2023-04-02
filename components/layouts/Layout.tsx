@@ -1,13 +1,13 @@
-import Header from "../modules/headers/Header"
+import Header from '../modules/headers/Header';
 
-const Layout = ({ children, className = "" }) => {
+const Layout = ({ children, className = '' }) => {
   return (
-    <div className={`${className} min-h-screen relative`}>
+    <div className={`${className} relative min-h-screen`}>
       <div>
         <Header />
-        <div className="max-w-7xl mx-auto pb-16 px-4 sm:px-6 lg:px-8">{children}</div>
+        <div className='mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8'>{children}</div>
       </div>
     </div>
-  )
-}
-export default Layout
+  );
+};
+export default Layout;

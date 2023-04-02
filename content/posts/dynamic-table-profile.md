@@ -1,11 +1,11 @@
 ---
-author: "Spencer Nicol"
-date: "2021-09-13"
-title: "Dynamic Table Profile"
-categories: ["mssql"]
-description: "How to dynamically profile every column of a table using TSQL"
-authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.webp"
-imageUrl: "https://media.publit.io/file/dynamicTableProfile/dynamic-table-profile.webp"
+author: 'Spencer Nicol'
+date: '2021-09-13'
+title: 'Dynamic Table Profile'
+categories: ['mssql']
+description: 'How to dynamically profile every column of a table using TSQL'
+authorImageUrl: 'https://media.publit.io/file/spencer/spencer-small.webp'
+imageUrl: 'https://media.publit.io/file/dynamicTableProfile/dynamic-table-profile.webp'
 ---
 
 ![](https://media.publit.io/file/dynamicTableProfile/dynamic-table-profile.webp)

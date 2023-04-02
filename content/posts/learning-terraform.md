@@ -1,11 +1,11 @@
 ---
-author: "Spencer Nicol"
-date: "2023-01-31"
-title: "Terraform with GCP"
-categories: ["terraform", "gcp"]
-description: "Notes from learning all about Terraform with GCP (Google Cloud Platform)"
-authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.webp"
-imageUrl: "https://media.publit.io/file/terraformGCP/gcp-terraform.webp"
+author: 'Spencer Nicol'
+date: '2023-01-31'
+title: 'Terraform with GCP'
+categories: ['terraform', 'gcp']
+description: 'Notes from learning all about Terraform with GCP (Google Cloud Platform)'
+authorImageUrl: 'https://media.publit.io/file/spencer/spencer-small.webp'
+imageUrl: 'https://media.publit.io/file/terraformGCP/gcp-terraform.webp'
 ---
 
 ![Terraform + Google Cloud Platform](https://media.publit.io/file/terraformGCP/gcp-terraform.webp)

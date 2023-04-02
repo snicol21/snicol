@@ -1,11 +1,11 @@
 ---
-author: "Spencer Nicol"
-date: "2023-01-24"
-title: "Coding for Fun and a Living"
-categories: ["html5", "css", "javascript"]
-description: "Learn about the exciting world of coding and how it can lead to a fulfilling career"
-authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.webp"
-imageUrl: "https://media.publit.io/file/codeForFun/code-for-fun.webp"
+author: 'Spencer Nicol'
+date: '2023-01-24'
+title: 'Coding for Fun and a Living'
+categories: ['html5', 'css', 'javascript']
+description: 'Learn about the exciting world of coding and how it can lead to a fulfilling career'
+authorImageUrl: 'https://media.publit.io/file/spencer/spencer-small.webp'
+imageUrl: 'https://media.publit.io/file/codeForFun/code-for-fun.webp'
 ---
 
 ![](https://media.publit.io/file/codeForFun/code-for-fun.webp)
@@ -79,7 +79,7 @@ int main() {
 - Popular programming language that is primarily used for creating interactive web pages and web applications. (Google, Facebook, and Amazon)
 
 ```javascript
-console.log("Hello, World!")
+console.log('Hello, World!');
 ```
 
 **C# (C-Sharp)**
@@ -160,10 +160,10 @@ h1 {
 JavaScript is the programming language that makes web pages interactive and dynamic. It is used to add behavior and logic to websites, such as creating responsive forms, interactive maps, and dynamic content updates. It allows web developers to create complex and dynamic user interfaces, and to make web pages more responsive to user input and interaction.
 
 ```javascript
-var button = document.getElementById("myButton")
-button.addEventListener("click", function () {
-  alert("Hello World!")
-})
+var button = document.getElementById('myButton');
+button.addEventListener('click', function () {
+  alert('Hello World!');
+});
 ```
 
 ### HelloWorld CodePen
