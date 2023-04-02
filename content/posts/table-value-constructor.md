@@ -1,11 +1,11 @@
 ---
-author: "Spencer Nicol"
-date: "2021-09-06"
-title: "Table Value Constructor"
-categories: ["mssql"]
-description: "Use this simple utility for generating a table value selector statement in SQL."
-authorImageUrl: "https://media.publit.io/file/spencer/spencer-small.webp"
-imageUrl: "https://media.publit.io/file/tableValueConstructor/table-value-constructor.webp"
+author: 'Spencer Nicol'
+date: '2021-09-06'
+title: 'Table Value Constructor'
+categories: ['mssql']
+description: 'Use this simple utility for generating a table value selector statement in SQL.'
+authorImageUrl: 'https://media.publit.io/file/spencer/spencer-small.webp'
+imageUrl: 'https://media.publit.io/file/tableValueConstructor/table-value-constructor.webp'
 ---
 
 ![](https://media.publit.io/file/tableValueConstructor/table-value-constructor.webp)
