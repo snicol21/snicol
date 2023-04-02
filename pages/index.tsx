@@ -24,7 +24,7 @@ const Home = ({ posts }: Props) => {
       <div className='px-4 pb-20 pt-20 sm:px-6 lg:px-8 lg:pb-28 lg:pt-28'>
         <div className='relative mx-auto max-w-xl divide-y-2 divide-gray-200'>
           <div>
-            <h2 className='text-3xl font-extrabold tracking-tight sm:text-4xl'>Blogs</h2>
+            <h2 className='text-3xl font-extrabold tracking-tight sm:text-4xl'>Posts</h2>
           </div>
           <div className='mt-6 grid gap-16 pt-10'>
             {posts
