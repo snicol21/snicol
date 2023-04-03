@@ -7,7 +7,7 @@ import TechIcon from '../../elements/icons/TechIcon';
 
 type Props = IPost;
 
-const ScriptPreview = ({ slug, author, title, date, categories, description, authorImageUrl, imageUrl, imageLoading }: Props) => {
+const ScriptPreview = ({ slug, title, date, categories, description, imageUrl, imageLoading }: Props) => {
   const dateFormatted = getDateDisplay(date);
   return (
     <Link href={`/posts/${slug}`} className='flex flex-col overflow-hidden rounded-lg shadow-lg dark:shadow-none'>
@@ -29,15 +29,8 @@ const ScriptPreview = ({ slug, author, title, date, categories, description, aut
           </div>
         </div>
         <div className='mt-6 flex items-center'>
-          <div className='flex-shrink-0'>
-            <span className='sr-only'>{author}</span>
-            <Image className='h-10 w-10 rounded-full' src={authorImageUrl} alt={author} width='40' height='40' loading='eager' />
-          </div>
-          <div className='ml-3'>
-            <p className='text-sm font-medium'>{author}</p>
-            <div className='flex space-x-1 text-sm text-gray-600 dark:text-gray-400'>
-              <time dateTime={date}>{dateFormatted.dateDisplay}</time>
-            </div>
+          <div className='flex space-x-1 text-sm text-gray-600 dark:text-gray-400'>
+            <time dateTime={date}>{dateFormatted.dateDisplay}</time>
           </div>
         </div>
       </div>
