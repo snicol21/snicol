@@ -22,16 +22,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full bg-white transition-opacity duration-300 dark:bg-mat-black ${
-        isScrolled ? 'bg-opacity-90 dark:bg-opacity-90' : ''
+      className={`fixed left-0 top-0 z-50 w-full border transition-colors duration-300 ${
+        isScrolled
+          ? 'border-slate-400 bg-slate-300 bg-opacity-90 dark:border-slate-600 dark:bg-slate-800 dark:bg-opacity-90'
+          : 'border-transparent bg-white dark:bg-mat-black'
       }`}
     >
       <nav className='mx-auto max-w-7xl' aria-label='Top'>
-        <div
-          className={`transition-border flex w-full items-center justify-between border-b px-4 py-3 duration-300 sm:px-6 ${
-            isScrolled ? 'border-primary border-opacity-80' : 'border-hidden'
-          } md:px-8`}
-        >
+        <div className='flex w-full items-center justify-between px-4 py-3 duration-300 sm:px-6 md:px-8'>
           <Link href='/' className='text-2xl font-bold uppercase'>
             Spencer Nicol
           </Link>
