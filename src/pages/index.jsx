@@ -197,7 +197,7 @@ export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>Spencer Nicol - Software designer, founder, and amateur astronaut</title>
+        <title>Spencer Nicol - Software engineer and family man</title>
         <meta
           name='description'
           content='Hi there! I’m Spencer, a software engineer from Salt Lake City. My current career focus is at b.well Connected Health, where I work on developing innovative solutions that empower patients to take ownership of their health data.'
