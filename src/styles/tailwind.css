@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import './prism.css';
+@import 'tailwindcss/utilities';
+
+@layer components {
+  *:is(h1, h2, h3, h4, h5, h6) {
+    @apply scroll-mt-10;
+  }
+}

@@ -1,45 +1,41 @@
 {
-  "name": "snicol",
+  "name": "tailwindui-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --config ./.prettierrc --write \"**/*.{ts,tsx,json,md,scss,css}\"",
-    "lint": "npx next lint"
+    "lint": "next lint",
+    "format": "prettier --config ./prettier.config.js --write \"**/*.{js,jsx,ts,tsx,json,md,mdx,scss,css,mjs}\" --ignore-path .prettierignore"
   },
+  "browserslist": "defaults, not ie <= 11",
   "dependencies": {
-    "@fontsource/inter": "^4.5.15",
-    "@headlessui/react": "^1.7.13",
-    "@heroicons/react": "^2.0.16",
-    "dayjs": "^1.11.7",
-    "gray-matter": "^4.0.3",
-    "next": "^13.2.4",
-    "next-mdx-remote": "^4.4.1",
-    "next-themes": "0.2.1",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^8.2.0",
-    "prismjs": "^1.29.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@headlessui/react": "^1.7.14",
+    "@mapbox/rehype-prism": "^0.8.0",
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.4.1",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.14",
+    "clsx": "^1.2.1",
+    "fast-glob": "^3.2.12",
+    "feed": "^4.2.2",
+    "focus-visible": "^5.2.0",
+    "next": "13.4.1",
+    "postcss-focus-visible": "^8.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.1.0",
-    "tailwindcss": "^3.3.0"
+    "remark-gfm": "^3.0.1",
+    "sharp": "^0.32.1",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/typography": "^0.5.9",
-    "@types/json5": "^2.2.0",
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.31",
-    "eslint": "^8.37.0",
-    "eslint-config-next": "^13.2.4",
-    "prettier": "^2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.6",
-    "typescript": "^5.0.2"
-  },
-  "resolutions": {
-    "trim": "^1.0.1"
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.1",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8"
   }
 }
