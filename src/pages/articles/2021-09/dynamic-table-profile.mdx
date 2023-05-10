@@ -146,6 +146,37 @@ WITH (NOLOCK) CROSS JOIN (
 EXEC(@SQLCaseStatement);
 ```
 
+To get an idea of what the generated SQL case statement looks like for this
+example, you can refer to the following code snippet and screenshot. I have also
+included the script and the results obtained after executing it.
+
+```sql
+SELECT
+      f.[ColumnID],
+      f.[ColumnNM],
+      CASE f.[ColumnNM]
+           WHEN 'Player' THEN CAST(tbl.[Player] AS SQL_VARIANT)
+           WHEN 'Team' THEN CAST(tbl.[Team] AS SQL_VARIANT)
+           WHEN 'Number' THEN CAST(tbl.[Number] AS SQL_VARIANT)
+      END AS ValueTXT
+INTO [dbo].[Profile_Pivot]
+FROM [master].[dbo].[Players] AS tbl
+WITH (NOLOCK) CROSS JOIN (
+      SELECT
+          [ORDINAL_POSITION] AS [ColumnID],
+          [COLUMN_NAME] AS [ColumnNM]
+      FROM [master].[INFORMATION_SCHEMA].[COLUMNS] AS c
+      WHERE c.[TABLE_SCHEMA]='dbo'
+          AND c.[TABLE_NAME] = 'Players'
+) AS f
+```
+
+<Image
+  src='https://media.publit.io/file/dynamicTableProfile/generated-case-statement.png'
+  width={800}
+  height={400}
+/>
+
 <Image
   src='https://media.publit.io/file/dynamicTableProfile/generated_case-statement-data.webp'
   width={800}

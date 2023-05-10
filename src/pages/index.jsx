@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { useRef, useEffect, useState } from 'react';
 
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
@@ -14,6 +15,7 @@ import image2 from '@/images/photos/image-2.jpg';
 import image3 from '@/images/photos/image-3.jpg';
 import image4 from '@/images/photos/image-4.jpg';
 import image5 from '@/images/photos/image-5.jpg';
+import { debounce } from '@/lib/debounce';
 import { formatDate } from '@/lib/formatDate';
 import { generateRssFeed } from '@/lib/generateRssFeed';
 import { getAllArticles } from '@/lib/getAllArticles';
@@ -200,18 +202,42 @@ function Resume() {
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2'];
+  const scrollRef = useRef(null);
+  const [isScrolling, setIsScrolling] = useState(true);
+
+  const images = [image1, image2, image3, image4, image5];
+  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2'];
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    const scrollToMiddle = ({ behavior = 'smooth' }) => {
+      container.scroll({
+        left: Math.round(container.scrollWidth / 2) - Math.round(container.clientWidth / 2),
+        behavior,
+      });
+    };
+    scrollToMiddle({ behavior: 'auto' });
+    const handleScroll = debounce(scrollToMiddle, 2000);
+
+    container.addEventListener('scroll', handleScroll);
+
+    setIsScrolling(false);
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className='mt-16 sm:mt-20'>
-      <div className='-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8'>
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+      <div ref={scrollRef} className='-my-4 flex flex-nowrap gap-5 overflow-x-scroll py-4 sm:gap-8'>
+        {images.map((image, index) => (
           <div
             key={image.src}
             className={clsx(
               'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
+              rotations[index % rotations.length]
             )}
+            style={{ scrollSnapAlign: 'center', opacity: isScrolling ? 0 : 1 }}
           >
             <Image
               src={image}
