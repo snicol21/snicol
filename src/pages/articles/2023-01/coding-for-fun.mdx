@@ -6,7 +6,7 @@ export const meta = {
   date: '2023-01-24',
   title: 'Coding for Fun and a Living',
   description:
-    'Presentation for up and coming programmers. Learn about the exciting world of coding and how it can lead to a fulfilling career',
+    "Join me as I share my personal experience and insights on coding as both a fun hobby and a fulfilling career path. In this post, we'll explore the exciting world of programming and discover the endless possibilities it can offer to up and coming programmers.",
 };
 
 export default (props) => <ArticleLayout isCodepen meta={meta} {...props} />;
@@ -17,10 +17,11 @@ export default (props) => <ArticleLayout isCodepen meta={meta} {...props} />;
   height={400}
 />
 
-## What is coding?
-
-Coding is the process of creating instructions for a computer to execute. It's
-like giving instructions to a robot to perform certain tasks.
+Welcome to "Coding for Fun and a Living." As someone who has been passionate
+about programming for years, I wanted to share my personal experiences and
+insights with you. In this article, we'll explore the exciting world of coding
+and the countless opportunities it offers for both fun and career advancement.
+Let's dive in!
 
 <Image
   src='https://media.publit.io/file/codeForFun/keyboard.webp'
@@ -30,8 +31,18 @@ like giving instructions to a robot to perform certain tasks.
 
 ## Why is coding important?
 
-Coding is important because it powers the technology that surrounds us. From
-smartphones to cars to video games, everything is made with code.
+Coding is a highly valuable skill in today's job market. Many industries rely on
+software and technology to operate, which means that developers are needed to
+design, build, and maintain these systems. In addition to the practical
+applications of coding, learning to code also helps develop problem-solving
+skills and encourages creativity. It can also automate repetitive tasks, which
+saves time and increases efficiency.
+
+Digital literacy is becoming increasingly important in today's digital world,
+and learning to code can help individuals better understand how technology works
+and how to use it to their advantage. Finally, by learning to code, individuals
+can future-proof their skills and stay relevant in a rapidly evolving job
+market.
 
 <Image
   src='https://media.publit.io/file/codeForFun/sentient-robot.webp'
@@ -39,124 +50,355 @@ smartphones to cars to video games, everything is made with code.
   height={400}
 />
 
-## Coding Languages
+## Deciding which language to learn
+
+When deciding which programming language to learn, there are a few factors you
+should consider to make an informed decision. For instance, you might want to
+take a look at different rankings of programming languages to understand which
+ones are most popular and in demand in the job market.
 
 <Image
   src='https://media.publit.io/file/codeForFun/languages-most-used.webp'
   width={800}
   height={400}
 />
-<Image
-  src='https://media.publit.io/file/codeForFun/languages-in-demand.webp'
-  width={800}
-  height={400}
-/>
+
+Another important factor to consider is salary. It can be useful to know the
+average salaries for developers working with different programming languages to
+understand their earning potential.
+
 <Image
   src='https://media.publit.io/file/codeForFun/languages-salaries.webp'
   width={800}
   height={400}
 />
 
-**Java**
+Finally, it's worth looking at the in-demand skills that employers are seeking
+in job candidates. This will help you identify the most important skills to
+learn to make yourself more competitive in the job market.
 
-- Widely used for developing enterprise applications, mobile apps, and Android
-  apps. (Google, Amazon, and Oracle)
-- The popular and loving games, Minecraft and Angry Birds were coded in Java.
-- Google Maps is coded in Java
+<Image
+  src='https://media.publit.io/file/codeForFun/languages-in-demand.webp'
+  width={800}
+  height={400}
+/>
+
+By taking into account these different factors, you can make an informed
+decision about which programming language to learn and which skills to focus on
+to achieve success in your career.
+
+## Code Examples in Popular Programming Languages
+
+Here are some basic code examples to give you a better understanding of what
+programming looks like in some of the most popular languages. Each code snippet
+is accompanied by a brief explanation of the language and what the code does.
+Feel free to experiment with these examples, modify them, and make them your
+own.
+
+### Java
+
+Java is a versatile programming language that can be used for developing various
+applications such as web and mobile apps, desktop software, and games. It is
+also used extensively in enterprise-level systems. Some popular games and
+software written in Java include Minecraft, OpenOffice, and Android Studio.
+
+Generates a random jersey number between 1 and 99 for a soccer team using the
+`java.util.Random` library:
 
 ```java
-public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println("Hello World!");
-  }
-}
-```
+import java.util.Random;
 
-**Python**
-
-- No, not the snake. 🐍
-- High-level programming language that is used for a wide range of purposes,
-  including data analysis, machine learning, and web development. (Google,
-  Facebook, and Netflix)
-
-```python
-print("Hello, World!")
-```
-
-**C++**
-
-- Powerful programming language that is used for developing system software,
-  video games, and desktop applications. (Microsoft, Amazon, and Apple)
-
-```c
-#include <iostream>
-
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
-}
-```
-
-**JavaScript**
-
-- Popular programming language that is primarily used for creating interactive
-  web pages and web applications. (Google, Facebook, and Amazon)
-
-```javascript
-console.log('Hello, World!');
-```
-
-**C# (C-Sharp)**
-
-- General-purpose programming language that is used for developing Windows
-  desktop and mobile apps. (Microsoft and Unity)
-
-```csharp
-using System;
-
-class HelloWorld
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello, World!");
+public class SoccerJersey {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int jerseyNum = rand.nextInt(99) + 1;
+        System.out.println("Your jersey number is: " + jerseyNum);
     }
 }
 ```
 
-**PowerShell**
+### Python
 
-- Command-line shell and scripting language that is used for automating tasks
-  and managing systems. It can also be used for automating repetitive tasks,
-  such as backups and software installations, and for automating the creation
-  and management of virtual machines.
+Python is a popular programming language known for its simplicity and ease of
+use. It can be used for developing various applications such as web
+applications, scientific computing, and machine learning. Some popular games and
+tools written in Python include the game Civilization IV, YouTube, and Dropbox.
 
-```powershell
-Write-Host "Hello, World!"
+Calculates the average number of points scored per game for a basketball player
+based on their total points and games played:
+
+```python
+total_points = 500
+games_played = 20
+avg_points = total_points / games_played
+
+print("Average points per game: " + str(avg_points))
 ```
 
-**Bash**
+### C++
 
-- Bash (short for "Bourne-Again Shell") is a Unix shell and command-line
-  interface. It is the default shell on most Linux and macOS systems, as well as
-  on other Unix-based operating systems. Bash is used to execute commands and
-  run scripts, and it provides a wide range of features for interacting with the
-  operating system and other programs.
+C++ is a powerful and versatile programming language that is widely used in game
+development, operating systems, and high-performance applications. Some popular
+games and software written in C++ include the game World of Warcraft, the
+operating system Windows, and the Adobe Suite.
+
+Determines if a hockey team has made the playoffs based on their number of wins,
+losses, and overtime losses:
+
+```c
+#include <iostream>
+using namespace std;
+
+int main() {
+    int wins = 30, losses = 20, ot_losses = 10;
+    int points = (wins * 2) + ot_losses;
+    bool made_playoffs = points >= 80;
+
+    if (made_playoffs) {
+        cout << "Congratulations, your team made the playoffs!" << endl;
+    } else {
+        cout << "Sorry, your team did not make the playoffs." << endl;
+    }
+
+    return 0;
+}
+```
+
+### JavaScript
+
+JavaScript is a popular programming language that is used extensively in web
+development. It can be used for creating interactive web pages, developing
+server-side applications, and building mobile apps. Some popular websites and
+tools written in JavaScript include Google Maps, Gmail, and Facebook.
+
+Calculates the distance a football quarterback can throw a ball based on their
+arm strength and angle:
+
+```javascript
+let arm_strength = 70; // in yards
+let angle = 45; // in degrees
+let velocity = arm_strength * 0.447; // convert yards per second to meters per second
+let distance = (velocity ** 2 * Math.sin((2 * angle * Math.PI) / 180)) / 9.8;
+
+console.log('Maximum throwing distance: ' + distance.toFixed(2) + ' meters');
+```
+
+### HTML
+
+HTML is the foundation of every website, providing the structure and content of
+web pages. Here's an example of how HTML can be used to create a simple
+basketball scoreboard.
+
+This HTML code creates a basic basketball scoreboard with two teams, Team A and
+Team B. Each team has a name and a score that starts at 0. The scoreboard is
+contained within a `<div>` element with a class of "scoreboard". The teams are
+represented by `<div>` elements with a class of "team", and each team has a
+`<h2>` element for their name and two `<p>` elements for their name and score.
+
+```html
+<div class="scoreboard">
+  <div class="team">
+    <h2>Home</h2>
+    <p class="name">Team A</p>
+    <p class="score">0</p>
+  </div>
+  <div class="team">
+    <h2>Away</h2>
+    <p class="name">Team B</p>
+    <p class="score">0</p>
+  </div>
+</div>
+```
+
+### CSS
+
+CSS (Cascading Style Sheets) is a style sheet language used for describing the
+presentation of a document written in HTML. It defines how HTML elements should
+be displayed on screen, paper, or in other media.
+
+This CSS snippet shows how to style a scoreboard element for a sports website.
+The scoreboard element has a dark background with white text, and includes a
+team name and score displayed in a large font. The scoreboard class can be
+applied to any element on the page to create a scoreboard.
+
+```css
+/* A CSS snippet for displaying a scoreboard */
+.scoreboard {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.scoreboard span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.scoreboard .team-name {
+  font-weight: bold;
+}
+
+.scoreboard .score {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+```
+
+### C# (C-Sharp)
+
+C# is a modern, object-oriented programming language that is used for developing
+Windows desktop applications, web applications, and games. Some popular games
+and software written in C# include the game Hearthstone, the Unity game engine,
+and the financial software Quicken.
+
+Calculates the average speed of a sprinter based on the distance they ran and
+the time it took:
+
+```csharp
+using System;
+
+class SprinterSpeed {
+    static void Main() {
+        int distance_meters = 100;
+        int time_seconds = 10;
+        double speed_mps = distance_meters / (double)time_seconds;
+        double speed_kph = speed_mps * 3.6;
+
+        Console.WriteLine("Average speed: " + speed_kph.ToString("0.00") + " km/h");
+    }
+}
+```
+
+### PowerShell
+
+PowerShell is a task automation and configuration management framework developed
+by Microsoft. It is used primarily in system administration, and can be used for
+automating administrative tasks, creating custom tools, and managing Windows
+systems.
+
+Calculates the body mass index (BMI) for a football player based on their weight
+and height:
+
+```powershell
+$weight_kg = 120
+$height_cm = 180
+$height_m = $height_cm / 100.0
+$bmi = $weight_kg / ($height_m * $height_m)
+
+Write-Host "Body mass index: $($bmi.ToString("0.00"))"
+```
+
+### Bash
+
+Bash is a Unix shell and command language that is used in system administration
+and automation. It can be used for creating shell scripts, managing file
+systems, and automating repetitive tasks.
+
+This script prompts the user to enter their name and then prints out a greeting.
 
 ```bash
-echo "Hello, World!"
+#!/bin/bash
+echo "What's your name?"
+read name
+echo "Hello, $name!"
+```
+
+### Typescript
+
+TypeScript is a strongly-typed, object-oriented programming language that is a
+superset of JavaScript. It compiles to plain JavaScript, making it compatible
+with all browsers, devices, and operating systems. TypeScript is used to develop
+large-scale web applications, both on the client and server side. It is known
+for its powerful type system, which helps catch errors at compile time, making
+it easier to maintain large codebases. Some popular tools and frameworks that
+use TypeScript include Angular, React, and Vue.js.
+
+This program defines a class representing a basketball player with a name and a
+score, and then creates an instance of that class and logs it to the console.
+
+```typescript
+class Player {
+  name: string;
+  score: number;
+  constructor(name: string, score: number) {
+    this.name = name;
+    this.score = score;
+  }
+}
+
+const lebron = new Player('LeBron James', 27);
+console.log(lebron);
+```
+
+### YAML
+
+YAML stands for "YAML Ain't Markup Language". It is a human-readable data
+serialization format that is often used for configuration files and data
+exchange between languages. YAML is used by many software applications,
+including Kubernetes, Docker, and Ansible, as a way to specify and configure
+their services. It is known for its simplicity, which makes it easy to read and
+write, and its flexibility, which allows it to be easily integrated with other
+programming languages.
+
+This YAML file defines a list of basketball teams and their corresponding
+win-loss records.
+
+```yml
+teams:
+  - name: Los Angeles Lakers
+    wins: 42
+    losses: 30
+  - name: Brooklyn Nets
+    wins: 48
+    losses: 24
+  - name: Golden State Warriors
+    wins: 39
+    losses: 33
 ```
 
 ## Steps to Becoming a Coder
 
-1.  Learn the basics of programming languages such as HTML, CSS, and JavaScript.
+Becoming a successful coder requires discipline, hard work, and a passion for
+technology. Here are some steps that can help you kickstart your journey towards
+becoming a skilled programmer:
 
-2.  Practice building projects and experimenting with different types of coding.
+1. Start with the basics: It's important to begin by learning the fundamentals
+   of coding, such as data types, variables, loops, and conditional statements.
+   You can start with languages like Python or JavaScript, which have a gentler
+   learning curve and are widely used in the industry. There are many resources
+   available online, including free courses, tutorials, and interactive coding
+   platforms like Codecademy, Khan Academy, and Udacity.
 
-3.  Look for internships or apprenticeships to gain real-world experience.
+2. Practice, practice, practice: The more you practice coding, the better you
+   will become. Try to work on different projects and experiment with various
+   programming languages. This will help you gain experience and develop
+   problem-solving skills, which are essential for any coder.
 
-4.  Consider getting a degree in computer science or a related field.
+3. Join a community: Joining a coding community can be helpful in many ways. You
+   can connect with other coders, ask for help, share your projects, and get
+   feedback on your work. You can find online communities on platforms like
+   Reddit, GitHub, and Stack Overflow.
 
-5.  Keep learning and stay up to date on the latest technologies and trends.
+4. Build a portfolio: As you gain more experience, it's important to showcase
+   your work. You can create a portfolio website, upload your projects to
+   GitHub, or contribute to open-source projects. This will help you build a
+   strong online presence and demonstrate your skills to potential employers.
+
+5. Stay up-to-date: The tech industry is constantly evolving, so it's important
+   to stay up-to-date with the latest technologies and trends. You can attend
+   coding meetups, read tech blogs, and participate in online forums to keep
+   yourself informed.
+
+By following these steps, you can gain the knowledge and experience needed to
+become a skilled coder. Remember, coding is not just about writing lines of code
+but also about solving problems and creating solutions. So, keep learning,
+practicing, and experimenting, and you'll be on your way to becoming a
+successful coder!
 
 <Image
   src='https://media.publit.io/file/codeForFun/steps-to-learn.webp'
@@ -164,56 +406,14 @@ echo "Hello, World!"
   height={400}
 />
 
-## Learn the Basics
+## CodePen Examples
 
-<Image
-  src='https://media.publit.io/file/codeForFun/programming-101.webp'
-  width={800}
-  height={400}
-/>
-
-### HTML: The Building Blocks of the Web
-
-HTML (Hypertext Markup Language) is a language used to create the structure and
-layout of web pages. It is the backbone of all websites, and it is used to
-create headings, paragraphs, links, images and other elements that make up a
-webpage. HTML uses tags, which are enclosed in angle brackets, to define the
-different types of elements on a webpage.
-
-```html
-<h1>Hello World!</h1>
-<button id="myButton">Click me</button>
-```
-
-### CSS: The Style of the Web
-
-CSS (Cascading Style Sheets) is a language used to add style and layout to web
-pages. It is used to change the font, color, spacing, and other visual elements
-of web pages. It allows you to separate the presentation of a webpage from its
-structure, making it easier to maintain and update the design of a website. CSS
-uses selectors, which identify the HTML elements to be styled, and declarations,
-which specify the styles to be applied.
-
-```css
-h1 {
-  color: blue;
-}
-```
-
-### Javascript: The Interactivity of the Web
-
-JavaScript is the programming language that makes web pages interactive and
-dynamic. It is used to add behavior and logic to websites, such as creating
-responsive forms, interactive maps, and dynamic content updates. It allows web
-developers to create complex and dynamic user interfaces, and to make web pages
-more responsive to user input and interaction.
-
-```javascript
-var button = document.getElementById('myButton');
-button.addEventListener('click', function () {
-  alert('Hello World!');
-});
-```
+CodePen is a popular online community for front-end developers to share,
+experiment, and learn from each other's code snippets. As a new developer,
+CodePen can be a great tool for exploring different front-end design and
+development techniques, and for getting inspiration for your own projects. To
+get you started, I've included some cool examples you can explore on CodePen
+below.
 
 ### HelloWorld CodePen
 
@@ -227,9 +427,7 @@ button.addEventListener('click', function () {
   data-editable='true'
 ></p>
 
-## Examples
-
-### Card
+### Card CodePen
 
 <p
   className='codepen'
@@ -241,7 +439,7 @@ button.addEventListener('click', function () {
   data-user='snicol21'
 ></p>
 
-### Card with Animation
+### Animated Card CodePen
 
 <p
   className='codepen'
@@ -253,7 +451,7 @@ button.addEventListener('click', function () {
   data-user='snicol21'
 ></p>
 
-## Chat with a Bot: Demo
+## Chat with a Bot CodePen
 
 <p
   className='codepen'
@@ -265,11 +463,17 @@ button.addEventListener('click', function () {
   data-user='snicol21'
 ></p>
 
-## Coding: A Fun and Rewarding Career
+## Conclusion
 
-Coding can be a fun and rewarding career. It allows you to use your creativity
-to build and create things that make a difference in the world. With practice
-and determination, anyone can learn to code and become a successful coder.
+In conclusion, coding can be a fun and rewarding hobby that can lead to a
+fulfilling career. Whether you're interested in building websites, creating
+apps, or designing games, there are endless possibilities with coding. By
+following the steps outlined in this article, you can start your coding journey
+with confidence and discover the joy of creating something from scratch. With
+the help of online resources like Codecademy, Khan Academy, and CodePen, you can
+continue to learn and explore the world of coding. So why not give it a try and
+see where it takes you? Who knows, you may even discover a new passion along the
+way.
 
 <Image
   src='https://media.publit.io/file/codeForFun/programmer-definition.webp'
