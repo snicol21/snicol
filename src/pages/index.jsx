@@ -268,12 +268,11 @@ export default function Home({ articles }) {
             Software engineer with an eye for design and a passion for automation
           </h1>
           <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>
-            I’m Spencer, a software engineer from Salt Lake City. My current career focus is at b.well Connected Health,
-            where I work on developing innovative solutions that empower patients to take ownership of their health
-            data. I am passionate about creating elegant and efficient solutions. With an eye for design and a knack for
-            automation, I specialize in delivering high-quality software solutions that help businesses thrive. Having
-            worked extensively in the healthcare industry, I am dedicated to developing innovative technology that
-            improves patient outcomes and streamlines processes.
+            Hi, I’m Spencer, a software engineer from Salt Lake City. I work at b.well Connected Health, where I’m
+            focused on creating software that empowers patients to manage their own health data. I enjoy finding elegant
+            solutions to complex problems, and I have a talent for design and automation. With experience in healthcare,
+            I’m passionate about using technology to improve patient outcomes and streamline processes. My goal is to
+            make a meaningful impact in people’s lives by creating software that’s both efficient and effective.
           </p>
           <div className='mt-6 flex gap-6'>
             <SocialLink href='https://twitter.com/SpenceNicol' aria-label='Follow on Twitter' icon={TwitterIcon} />
