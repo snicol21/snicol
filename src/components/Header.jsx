@@ -11,7 +11,14 @@ import avatarImage from '@/images/avatar.jpg';
 function CloseIcon(props) {
   return (
     <svg viewBox='0 0 24 24' aria-hidden='true' {...props}>
-      <path d='m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5' fill='none' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
+      <path
+        d='m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1.5'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+      />
     </svg>
   );
 }
@@ -26,7 +33,14 @@ function ChevronDownIcon(props) {
 
 function SunIcon(props) {
   return (
-    <svg viewBox='0 0 24 24' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' aria-hidden='true' {...props}>
+    <svg
+      viewBox='0 0 24 24'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      {...props}
+    >
       <path d='M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z' />
       <path
         d='M12.25 3v1.5M21.5 12.25H20M18.791 18.791l-1.06-1.06M18.791 5.709l-1.06 1.06M12.25 20v1.5M4.5 12.25H3M6.77 6.77 5.709 5.709M6.77 17.73l-1.061 1.061'
@@ -120,7 +134,10 @@ function NavItem({ href, children }) {
     <li>
       <Link
         href={href}
-        className={clsx('relative block px-3 py-2 transition', isActive ? 'text-teal-500 dark:text-teal-400' : 'hover:text-teal-500 dark:hover:text-teal-400')}
+        className={clsx(
+          'relative block px-3 py-2 transition',
+          isActive ? 'text-teal-500 dark:text-teal-400' : 'hover:text-teal-500 dark:hover:text-teal-400'
+        )}
       >
         {children}
         {isActive && (
@@ -321,7 +338,10 @@ export function Header() {
           <>
             <div ref={avatarRef} className='order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]' />
             <Container className='top-0 order-last -mb-3 pt-3' style={{ position: 'var(--header-position)' }}>
-              <div className='top-[var(--avatar-top,theme(spacing.3))] w-full' style={{ position: 'var(--header-inner-position)' }}>
+              <div
+                className='top-[var(--avatar-top,theme(spacing.3))] w-full'
+                style={{ position: 'var(--header-inner-position)' }}
+              >
                 <div className='relative'>
                   <AvatarContainer
                     className='absolute left-0 top-3 origin-left transition-opacity'
@@ -330,14 +350,21 @@ export function Header() {
                       transform: 'var(--avatar-border-transform)',
                     }}
                   />
-                  <Avatar large className='block h-16 w-16 origin-left' style={{ transform: 'var(--avatar-image-transform)' }} />
+                  <Avatar
+                    large
+                    className='block h-16 w-16 origin-left'
+                    style={{ transform: 'var(--avatar-image-transform)' }}
+                  />
                 </div>
               </div>
             </Container>
           </>
         )}
         <div ref={headerRef} className='top-0 z-10 h-16 pt-6' style={{ position: 'var(--header-position)' }}>
-          <Container className='top-[var(--header-top,theme(spacing.6))] w-full' style={{ position: 'var(--header-inner-position)' }}>
+          <Container
+            className='top-[var(--header-top,theme(spacing.6))] w-full'
+            style={{ position: 'var(--header-inner-position)' }}
+          >
             <div className='relative flex gap-4'>
               <div className='flex flex-1'>
                 {!isHomePage && (

@@ -49,7 +49,11 @@ Card.Cta = function CardCta({ children }) {
 Card.Eyebrow = function CardEyebrow({ as: Component = 'p', decorate = false, className, children, ...props }) {
   return (
     <Component
-      className={clsx(className, 'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500', decorate && 'pl-3.5')}
+      className={clsx(
+        className,
+        'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500',
+        decorate && 'pl-3.5'
+      )}
       {...props}
     >
       {decorate && (

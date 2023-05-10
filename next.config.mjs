@@ -20,7 +20,11 @@ const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap', properties: { className: 'heading-link' } }], rehypePrism],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behavior: 'wrap', properties: { className: 'heading-link' } }],
+      rehypePrism,
+    ],
   },
 });
 

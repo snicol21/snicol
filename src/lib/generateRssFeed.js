@@ -45,5 +45,8 @@ export async function generateRssFeed() {
   }
 
   await mkdir('./public/rss', { recursive: true });
-  await Promise.all([writeFile('./public/rss/feed.xml', feed.rss2(), 'utf8'), writeFile('./public/rss/feed.json', feed.json1(), 'utf8')]);
+  await Promise.all([
+    writeFile('./public/rss/feed.xml', feed.rss2(), 'utf8'),
+    writeFile('./public/rss/feed.json', feed.json1(), 'utf8'),
+  ]);
 }

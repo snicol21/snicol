@@ -30,7 +30,10 @@ export default function Speaking() {
     <>
       <Head>
         <title>Speaking - Spencer Nicol</title>
-        <meta name='description' content='I’ve spoken at events all around the world and been interviewed for many podcasts.' />
+        <meta
+          name='description'
+          content='I’ve spoken at events all around the world and been interviewed for many podcasts.'
+        />
       </Head>
       <SimpleLayout
         title='I’ve spoken at events all around the world and been interviewed for many podcasts.'

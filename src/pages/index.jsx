@@ -20,7 +20,15 @@ import { getAllArticles } from '@/lib/getAllArticles';
 
 function MailIcon(props) {
   return (
-    <svg viewBox='0 0 24 24' fill='none' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' aria-hidden='true' {...props}>
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      {...props}
+    >
       <path
         d='M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z'
         className='fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500'
@@ -32,7 +40,15 @@ function MailIcon(props) {
 
 function BriefcaseIcon(props) {
   return (
-    <svg viewBox='0 0 24 24' fill='none' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' aria-hidden='true' {...props}>
+    <svg
+      viewBox='0 0 24 24'
+      fill='none'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      aria-hidden='true'
+      {...props}
+    >
       <path
         d='M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z'
         className='fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500'
@@ -48,7 +64,12 @@ function BriefcaseIcon(props) {
 function ArrowDownIcon(props) {
   return (
     <svg viewBox='0 0 16 16' fill='none' aria-hidden='true' {...props}>
-      <path d='M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
+      <path
+        d='M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5'
+        strokeWidth='1.5'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+      />
     </svg>
   );
 }
@@ -81,7 +102,9 @@ function Newsletter() {
         <MailIcon className='h-6 w-6 flex-none' />
         <span className='ml-3'>Stay up to date</span>
       </h2>
-      <p className='mt-2 text-sm text-zinc-600 dark:text-zinc-400'>Get notified when I publish something new, and unsubscribe at any time.</p>
+      <p className='mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
+        Get notified when I publish something new, and unsubscribe at any time.
+      </p>
       <div className='mt-6 flex'>
         <input
           type='email'
@@ -156,14 +179,19 @@ function Resume() {
                 className='ml-auto text-xs text-zinc-400 dark:text-zinc-500'
                 aria-label={`${role.start.label ?? role.start} until ${role.end.label ?? role.end}`}
               >
-                <time dateTime={role.start.dateTime ?? role.start}>{role.start.label ?? role.start}</time> <span aria-hidden='true'>—</span>{' '}
+                <time dateTime={role.start.dateTime ?? role.start}>{role.start.label ?? role.start}</time>{' '}
+                <span aria-hidden='true'>—</span>{' '}
                 <time dateTime={role.end.dateTime ?? role.end}>{role.end.label ?? role.end}</time>
               </dd>
             </dl>
           </li>
         ))}
       </ol>
-      <Button href='https://www.dropbox.com/s/sp58dmpeorqr7u4/nicol_spencer_resume_202305.pdf?dl=1' variant='secondary' className='group mt-6 w-full'>
+      <Button
+        href='https://www.dropbox.com/s/sp58dmpeorqr7u4/nicol_spencer_resume_202305.pdf?dl=1'
+        variant='secondary'
+        className='group mt-6 w-full'
+      >
         Download CV
         <ArrowDownIcon className='h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50' />
       </Button>
@@ -185,7 +213,12 @@ function Photos() {
               rotations[imageIndex % rotations.length]
             )}
           >
-            <Image src={image} alt='' sizes='(min-width: 640px) 18rem, 11rem' className='absolute inset-0 h-full w-full object-cover' />
+            <Image
+              src={image}
+              alt=''
+              sizes='(min-width: 640px) 18rem, 11rem'
+              className='absolute inset-0 h-full w-full object-cover'
+            />
           </div>
         ))}
       </div>
@@ -209,10 +242,12 @@ export default function Home({ articles }) {
             Software engineer with an eye for design and a passion for automation
           </h1>
           <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>
-            I’m Spencer, a software engineer from Salt Lake City. My current career focus is at b.well Connected Health, where I work on developing innovative
-            solutions that empower patients to take ownership of their health data. I am passionate about creating elegant and efficient solutions. With an eye
-            for design and a knack for automation, I specialize in delivering high-quality software solutions that help businesses thrive. Having worked
-            extensively in the healthcare industry, I am dedicated to developing innovative technology that improves patient outcomes and streamlines processes.
+            I’m Spencer, a software engineer from Salt Lake City. My current career focus is at b.well Connected Health,
+            where I work on developing innovative solutions that empower patients to take ownership of their health
+            data. I am passionate about creating elegant and efficient solutions. With an eye for design and a knack for
+            automation, I specialize in delivering high-quality software solutions that help businesses thrive. Having
+            worked extensively in the healthcare industry, I am dedicated to developing innovative technology that
+            improves patient outcomes and streamlines processes.
           </p>
           <div className='mt-6 flex gap-6'>
             <SocialLink href='https://twitter.com/SpenceNicol' aria-label='Follow on Twitter' icon={TwitterIcon} />

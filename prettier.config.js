@@ -9,4 +9,14 @@ module.exports = {
   bracketSpacing: true,
   arrowParens: 'always',
   plugins: [require('prettier-plugin-tailwindcss')],
+  printWidth: 120,
+  overrides: [
+    {
+      files: '*.mdx',
+      options: {
+        printWidth: 80,
+        proseWrap: 'always',
+      },
+    },
+  ],
 };
