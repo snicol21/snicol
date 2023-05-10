@@ -211,10 +211,12 @@ function Photos() {
   useEffect(() => {
     const container = scrollRef.current;
     const scrollToMiddle = ({ behavior = 'smooth' }) => {
-      container.scroll({
-        left: Math.round(container.scrollWidth / 2) - Math.round(container.clientWidth / 2),
-        behavior,
-      });
+      if (window.innerWidth < container.scrollWidth) {
+        container.scroll({
+          left: Math.round(container.scrollWidth / 2) - Math.round(container.clientWidth / 2),
+          behavior,
+        });
+      }
     };
     scrollToMiddle({ behavior: 'auto' });
     const handleScroll = debounce(scrollToMiddle, 2000);
@@ -228,8 +230,8 @@ function Photos() {
   }, []);
 
   return (
-    <div className='mt-16 sm:mt-20'>
-      <div ref={scrollRef} className='-my-4 flex flex-nowrap gap-5 overflow-x-scroll py-4 sm:gap-8'>
+    <div className='mt-16 flex justify-center sm:mt-20'>
+      <div ref={scrollRef} className='-my-4 flex flex-nowrap gap-5 overflow-x-scroll px-3 py-4 sm:gap-8'>
         {images.map((image, index) => (
           <div
             key={image.src}
