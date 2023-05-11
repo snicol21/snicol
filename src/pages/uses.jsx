@@ -101,7 +101,8 @@ export default function Uses() {
               ChatGPT has become an indispensable productivity tool for me. I use it for brainstorming, idea generation,
               refinement of communication emails, summarizing function descriptions, code optimization, and more. It’s
               incredibly helpful to have an AI-powered writing assistant that can provide quick and accurate summaries
-              of complex topics. And yes, I definitely use it for method descriptions too!
+              of complex topics. If you can’t outpace the robots, why not put them to work on the mundane tasks, and
+              save your brainpower for the fun stuff?
             </Tool>
             <Tool title='Monster Energy Drinks'>
               When I need a pick-me-up to tackle my tasks, I call upon the powerful forces of Monster Energy drinks. My
