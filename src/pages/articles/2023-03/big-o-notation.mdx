@@ -17,33 +17,66 @@ export default (props) => <ArticleLayout meta={meta} {...props} />;
   height={400}
 />
 
-After completing
-[Mosh Hamedani's Data Structures and Algorithms course](https://codewithmosh.com/p/data-structures-algorithms-part1),
-I found it to be an incredibly valuable resource. With a finance degree and a
-career that has taken some unexpected turns, I discovered a talent for software
-development and programming. However, I have sometimes felt at a disadvantage
-when unable to converse fluently with other developers. This course has helped
-me to think like a programmer.
+If you're someone like me who came into programming from an unconventional
+background, you may not have been exposed to important concepts like Big O
+Notation. However, don't let that hold you back. Understanding Big O Notation is
+essential for making informed decisions about the efficiency of your code, and
+it's a skill that can set you apart from your peers. In this article, I'll share
+what I've learned about Big O Notation and why it's valuable. By the end of this
+article, you'll have a solid foundation in Big O Notation and be equipped to
+write more efficient and scalable code.
 
-## What is it?
+## Why Understanding Algorithm Efficiency Matters
 
-Big O notation is a fundamental concept in computer science that describes how
-scalable an algorithm is or its runtime complexity. This notation provides a way
-for developers to evaluate and compare different algorithms, helping them choose
-the most efficient one for a given task. For those who are new to programming,
-learning Big O notation can be challenging, but it's a crucial skill that is
-often tested in interviews at big companies. Through the use of Big O notation,
-developers can "think like a programmer" and gain a deeper understanding of how
-to create efficient and scalable code.
+Algorithms are at the heart of computer science, and they are used in countless
+applications, from sorting data to searching for information on the internet. An
+algorithm is a set of instructions for solving a specific problem, and it
+typically consists of a sequence of steps that are executed in a particular
+order. For example, an algorithm for finding the largest number in an array
+might involve comparing each element of the array to a "current largest"
+variable and updating that variable if a larger element is found.
 
-> Big O notation is a mathematical notation that describes the limiting behavior
-> of a function when the argument tends towards a particular value or infinity.
->
-> -- Wikipedia
+When we talk about the efficiency of an algorithm, we're interested in how long
+it takes to execute and how much memory it uses. These factors depend on a
+number of things, including the input size (i.e., the size of the data set that
+the algorithm is operating on) and the types of operations that the algorithm
+performs. For example, an algorithm that performs a lot of comparisons might be
+slower than one that performs fewer comparisons but more arithmetic operations.
 
-## Constant Time Complexity: O(1)
+To measure the efficiency of an algorithm, we use a variety of metrics,
+including time complexity and space complexity. **Time complexity** is a measure
+of how long it takes for an algorithm to execute as a function of the input
+size. **Space complexity** is a measure of how much memory an algorithm uses as
+a function of the input size.
+
+## Big O Notation Defined
+
+Big O Notation is a specific type of **time complexity** analysis that provides
+a way to express how an algorithm's runtime or memory usage scales as the input
+size increases. In other words, it helps us understand how an algorithm performs
+as we increase the amount of data it needs to process. Big O Notation is
+essential for analyzing and comparing different algorithms, as it allows us to
+determine which algorithm is more efficient for a given problem.
+
+There are different types of time complexities that Big O Notation describes.
+We'll start with the most efficient type of complexity - constant time - and
+work our way up to the least efficient type - exponential time. By the end,
+you'll have a solid understanding of how to use Big O Notation to analyze
+algorithms and make informed decisions about their efficiency.
+
+## Constant Time Complexity
+
+When analyzing the efficiency of an algorithm, one of the most desirable
+outcomes is to have a constant time complexity, also known as `O(1)`. This means
+that the time taken to complete the algorithm does not increase with the size of
+the input. Constant time algorithms are often the most efficient because they
+can perform the same number of operations, regardless of how much data they need
+to process. These algorithms are especially useful for real-time applications or
+situations where processing speed is crucial.
 
 - The number of operations is constant.
+
+This is a simple function that adds two integers and returns the result.
 
 ```java
 public static int add(int a, int b) {
@@ -51,67 +84,31 @@ public static int add(int a, int b) {
 }
 ```
 
-This is a simple function that adds two integers and returns the result.
-
 Regardless of the values of a and b, this function performs a fixed number of
 operations (in this case, a single addition operation) and returns the result.
 This means that the time required to run this function is constant and does not
 change as the input values change.
 
-## Linear Time Complexity: O(n)
+Algorithms with constant time complexity are useful in real-time applications
+such as video games, image processing, and financial systems where processing
+speed is critical. While constant time algorithms are rare in practice,
+understanding how they work can help us optimize our code and identify potential
+bottlenecks.
 
-- The number of operations it performs scales in direct proportion to the input.
-- As the input grows, so do the number of operations, linearly. Our function
-  needs to perform the same number of operations for every input.
-- An example of this would be a "loop".
+## Logarithmic Time Complexity
 
-```java
-public static int sum(int[] array) {
-  int sum = 0;
-  for (int i = 0; i < array.length; i++) {
-    sum += array[i];
-  }
-  return sum;
-}
-```
+Logarithmic time complexity, denoted as `O(log n)`, means that as the size of
+the input increases, the time required to complete the algorithm grows at a
+decreasing rate. In other words, the algorithm takes longer to process larger
+inputs, but the amount of additional time required for each additional unit of
+input size decreases. This makes logarithmic algorithms, such as binary search,
+very efficient for processing large amounts of data.
 
-This function takes an array of integers as input and returns the sum of all the
-elements in the array.
+- The number of operations grows at a decreasing rate as the input size grows.
+- An example of this would be a "binary search".
 
-In each iteration of the for loop, the algorithm performs a single addition
-operation to update the sum variable with the value of the current element in
-the array. Since the loop iterates over each element in the array exactly once,
-the number of operations required is proportional to the size of the input
-array.
-
-## Quadratic Time Complexity: O(n^2)
-
-- The number of operations it performs scales in proportion to the square of the
-  input.
-- An example of this would be a "nested loop".
-
-```java
-public static int sumPairs(int[] array) {
-  int sum = 0;
-  for (int i = 0; i < array.length; i++) {
-    for (int j = 0; j < array.length; j++) {
-      sum += array[i] + array[j];
-    }
-  }
-  return sum;
-}
-```
-
-In each iteration of the outer loop, the algorithm selects an element i from the
-array. In each iteration of the inner loop, the algorithm selects an element j
-from the array and adds the sum of the elements at indices i and j to the
-running total. Since the loops iterate over all possible pairs of elements in
-the array, the total number of operations required is proportional to the size
-of the input array squared.
-
-## Logarithmic Time Complexity: O(log n)
-
-- The number of operations grows very slowly as the input size grows.
+This is an iterative binary search algorithm that searches for a target value in
+a sorted array.
 
 ```java
 public static int binarySearch(int[] array, int target) {
@@ -133,9 +130,6 @@ public static int binarySearch(int[] array, int target) {
 }
 ```
 
-This is an iterative binary search algorithm that searches for a target value in
-a sorted array.
-
 In each iteration of the while loop, the algorithm divides the size of the
 search space in half by checking whether the target value is less than, greater
 than, or equal to the value at the midpoint of the current search space. This
@@ -148,9 +142,98 @@ we call binarySearch with an array of size 1,000,000, it will take at most 20
 iterations to find the target (since log base 2 of 1,000,000 is approximately
 20).
 
-## Exponential Time Complexity: O(2^n)
+Because of their efficiency for large inputs, questions about these algorithms,
+such as binary search, are often asked in job interviews to test candidates'
+knowledge of performant algorithms.
+
+## Linear Time Complexity
+
+Linear time complexity, also known as `O(n)`, means that the time taken to
+complete an algorithm increases linearly with the size of the input. In other
+words, if the size of the input doubles, the time taken to complete the
+algorithm also doubles. Linear algorithms are often considered efficient because
+they are able to process data quickly and handle large inputs without becoming
+too slow.
+
+- The number of operations it performs scales in direct proportion to the input.
+- An example of this would be a "loop".
+
+This function takes an array of integers as input and returns the sum of all the
+elements in the array.
+
+```java
+public static int sum(int[] array) {
+  int sum = 0;
+  for (int i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+```
+
+In each iteration of the for loop, the algorithm performs a single addition
+operation to update the sum variable with the value of the current element in
+the array. Since the loop iterates over each element in the array exactly once,
+the number of operations required is proportional to the size of the input
+array.
+
+Overall, linear time complexity is a very common complexity in algorithms and it
+is often desirable because it is able to handle large inputs without becoming
+too slow. Linear algorithms can be optimized to run even faster, but generally
+speaking, they are able to provide results quickly and efficiently.
+
+## Quadratic Time Complexity
+
+Quadratic time complexity, denoted by `O(n^2)`, indicates that the time required
+for an algorithm to complete grows at an increasing rate with the size of the
+input. Quadratic algorithms typically involve nested loops or iterations over
+the input data. As a result, their runtime is proportional to the square of the
+input size, making them significantly slower than linear or constant time
+algorithms. For large inputs, quadratic algorithms can become excessively slow
+and impractical. An example of a quadratic algorithm is a nested loop. These
+algorithms are often best avoided or optimized to reduce their runtime whenever
+possible.
+
+- The number of operations it performs scales in proportion to the square of the
+  input.
+- An example of this would be a "nested loop".
+
+This `sumPairs` function has two nested loops that iterate over the input array.
+
+```java
+public static int sumPairs(int[] array) {
+  int sum = 0;
+  for (int i = 0; i < array.length; i++) {
+    for (int j = 0; j < array.length; j++) {
+      sum += array[i] + array[j];
+    }
+  }
+  return sum;
+}
+```
+
+In each iteration of the outer loop, the algorithm selects an element i from the
+array. In each iteration of the inner loop, the algorithm selects an element j
+from the array and adds the sum of the elements at indices i and j to the
+running total. Since the loops iterate over all possible pairs of elements in
+the array, the total number of operations required is proportional to the size
+of the input array squared.
+
+## Exponential Time Complexity
+
+Exponential time complexity, also known as `O(2^n)`, means that the time taken
+to complete an algorithm increases exponentially with the size of the input.
+Exponential algorithms are generally the least efficient, as the time taken to
+complete the algorithm grows very quickly with the size of the input. These
+algorithms are often not practical for real-world applications and are generally
+used only for theoretical analysis.
 
 - The number of operations grows at an increasing rate as the input size grows.
+
+This is a recursive method that calculates the nth Fibonacci number. It has an
+exponential time complexity of `O(2^n)`, because each call to fibonacci results
+in two more calls, leading to an exponentially increasing number of function
+calls as n gets larger.
 
 ```java
 public static int fibonacci(int n) {
@@ -162,17 +245,52 @@ public static int fibonacci(int n) {
 }
 ```
 
-This is a recursive method that calculates the nth Fibonacci number. It has an
-exponential time complexity of O(2^n), because each call to fibonacci results in
-two more calls, leading to an exponentially increasing number of function calls
-as n gets larger.
-
 To see the exponential time complexity of this method in action, try running it
 with a large input value, like fibonacci(40). You'll notice that it takes a long
 time to compute the result, because the number of function calls grows
 exponentially with the input value.
 
-## Cheat Sheet
+Since exponential time complexity algorithms are generally not practical for
+real-world applications, it's important to understand the limitations of these
+algorithms and to find more efficient alternatives whenever possible. However,
+they can still be useful for theoretical analysis and understanding the upper
+bounds of algorithmic complexity.
+
+## Conclusion
+
+In summary, Big O notation is a mathematical tool used to describe the
+efficiency of an algorithm in terms of its time and space complexity.
+Understanding Big O notation can help you analyze algorithms and optimize them
+for better performance.
+
+We covered five common time complexities in this guide:
+
+- Constant time complexity, `O(1)`: Algorithms with constant time complexity
+  take the same amount of time to complete regardless of the size of the input.
+- Logarithmic time complexity, `O(log n)`: Algorithms with logarithmic time
+  complexity take time proportional to the logarithm of the size of the input.
+- Linear time complexity, `O(n)`: Algorithms with linear time complexity take
+  time proportional to the size of the input.
+- Quadratic time complexity, `O(n^2)`: Algorithms with quadratic time complexity
+  take time proportional to the square of the size of the input.
+- Exponential time complexity, `O(2^n)`: Algorithms with exponential time
+  complexity take time proportional to a constant raised to the power of the
+  size of the input.
+
+When analyzing an algorithm, it's important to understand its time complexity
+and look for ways to optimize it. Some tips and tricks to keep in mind include:
+
+- Minimize the number of operations performed by the algorithm.
+- Avoid nested loops or iterations over the input data.
+- Use efficient data structures and algorithms when possible.
+- Look for patterns or repetitions in the input data that can be exploited for
+  better performance.
+- Experiment with different input sizes to see how the algorithm performs and
+  identify potential bottlenecks.
+
+By applying these principles and understanding the fundamentals of Big O
+notation, you can write more efficient and performant algorithms for a variety
+of applications.
 
 <Image
   src='https://media.publit.io/file/bigONotation/cheat-sheet.png'
