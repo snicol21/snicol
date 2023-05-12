@@ -39,20 +39,17 @@ export default function Uses() {
         <div className='space-y-20'>
           <ToolsSection title='Workstation'>
             <Tool title='16” MacBook Pro, Intel Core i7, 16GB RAM (2019)'>
-              My trusty MacBook Pro is like a loyal dog and faithful friend that never leaves my side. It’s always there
-              when I need it, whether I’m burning the midnight oil or tackling a new project. And just like a loyal
-              canine companion, it never lets me down. It’s the perfect tool for a busy person like me who needs a
-              reliable workhorse to get things done.
+              My MacBook is a reliable and powerful tool for coding and work. With its fast processor and ample memory,
+              it’s always up to the task no matter how demanding my projects get. This MacBook never lets me down,
+              making it the perfect choice for a busy developer like me.
             </Tool>
             <Tool title='Dell D Series LED-Lit Monitor 31.5"'>
               My Dell monitor is like the big brother I never had. It’s always there to guide me through the coding
               wilderness and never complains when I stare at it for hours on end.
             </Tool>
             <Tool title='Apple Magic Keyboard and Mouse'>
-              I use the Apple Magic Mouse and Keyboard to conquer my digital world with grace and precision. These sleek
-              and stylish peripherals make me feel like a caffeinated ballerina, gliding through emails and documents
-              with ease. However, I do have a bone to pick with the Magic Mouse – why can’t you use it and charge it at
-              the same time?!
+              My dynamic duo for typing and clicking. With their sleek design and wireless connectivity, they offer both
+              style and convenience.
             </Tool>
             <Tool title='Herman Miller Aeron Chair'>
               My Aeron Chair by Herman Miller is like a best friend - supportive, reliable, and always there for me when
@@ -62,23 +59,19 @@ export default function Uses() {
                   QuickTurn Concepts
                 </a>
               </span>{' '}
-              , my buddy’s business, hooked me up with this sweet ride, and now I can’t imagine life without it. With
-              its adjustable lumbar support, breathable mesh fabric, and 12-year warranty, it’s like the chair version
-              of a superhero. So long, back pain! Hello, comfortable butt!
+              , my buddy’s business, hooked me up with this sweet ride, and now I can’t imagine life without it.
             </Tool>
           </ToolsSection>
           <ToolsSection title='Development tools'>
             <Tool title='VSCode'>
-              VSCode, the one IDE to rule them all. It’s like the Swiss Army Knife of development tools, but with fewer
-              toothpicks and more extensions. I can customize it to fit my workflow, and with its Git integration, I can
-              easily undo all the mistakes I just made. It’s got Emmet support, debugging, and a terminal built right
-              in. I’m pretty sure I could use it to launch a rocket to the moon if I needed to.
+              VSCode, the one IDE to rule them all. It’s like the Swiss Army Knife of development tools. I can customize
+              it to fit my workflow, and with its Git integration, I can easily undo all the mistakes I make. It’s got
+              Emmet support, debugging, and a terminal built right in.
             </Tool>
             <Tool title='iTerm2'>
               As a developer, I rely heavily on my terminal, and iTerm2 defaulted to use PowerShell on my MacBook has
               been a game-changer. But what takes my terminal to the next level is the use of OhMyPosh, which allows me
-              to create personalized themes and have a visually appealing terminal experience. To make navigating around
-              even easier, I use the ”z” module, which helps me quickly jump to the directories I use the most.
+              to create personalized themes and have a visually appealing terminal experience.
             </Tool>
             <Tool title='Postman'>
               Postman is my go-to tool for testing APIs, and it’s saved me from countless hours of hair-pulling
@@ -98,18 +91,14 @@ export default function Uses() {
           </ToolsSection>
           <ToolsSection title='Productivity'>
             <Tool title='ChatGPT'>
-              ChatGPT has become an indispensable productivity tool for me. I use it for brainstorming, idea generation,
-              refinement of communication emails, summarizing function descriptions, code optimization, and more. It’s
-              incredibly helpful to have an AI-powered writing assistant that can provide quick and accurate summaries
-              of complex topics. If you can’t outpace the robots, why not put them to work on the mundane tasks, and
-              save your brainpower for the fun stuff?
+              ChatGPT has become an indispensable productivity tool for me. I use it for brainstorming, generation
+              function descriptions, code optimization, and more. If you can’t outpace the robots, why not put them to
+              work on the mundane tasks, and save your brainpower for the fun stuff?
             </Tool>
             <Tool title='Monster Energy Drinks'>
-              When I need a pick-me-up to tackle my tasks, I call upon the powerful forces of Monster Energy drinks. My
-              favorite zero-sugar flavors, Ultra Strawberry Dreams and Zero Sugar Monster Energy, keep me focused and
-              alert without the dreaded sugar crash. And when I’m feeling bold, the tropical punch of Mango Loco Juice
-              is my go-to. While I try to stay hydrated and take breaks, sometimes a little caffeine superhero is just
-              what I need to save the day and conquer my to-do list.
+              My favorite flavors are Ultra Strawberry Dreams, Zero Sugar Monster Energy, and Mango Loco Juice. While I
+              try to stay hydrated and take breaks, sometimes a little caffeine superhero is just what I need to save
+              the day.
             </Tool>
           </ToolsSection>
         </div>
