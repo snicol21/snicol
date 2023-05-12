@@ -231,7 +231,7 @@ function Photos() {
 
   return (
     <div className='mt-16 flex justify-center sm:mt-20'>
-      <div ref={scrollRef} className='-my-4 flex flex-nowrap gap-5 overflow-x-scroll px-3 py-4 sm:gap-8'>
+      <div ref={scrollRef} className='-my-4 flex flex-nowrap gap-5 overflow-x-auto px-3 py-4 sm:gap-8'>
         {images.map((image, index) => (
           <div
             key={image.src}
