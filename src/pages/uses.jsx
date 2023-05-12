@@ -91,8 +91,8 @@ export default function Uses() {
           </ToolsSection>
           <ToolsSection title='Productivity'>
             <Tool title='ChatGPT'>
-              ChatGPT has become an indispensable productivity tool for me. I use it for brainstorming, generation
-              function descriptions, code optimization, and more. If you can’t outpace the robots, why not put them to
+              ChatGPT has become an indispensable productivity tool for me. I use it for brainstorming, generating
+              code descriptions, code optimization, and more. If you can’t outpace the robots, why not put them to
               work on the mundane tasks, and save your brainpower for the fun stuff?
             </Tool>
             <Tool title='Monster Energy Drinks'>
