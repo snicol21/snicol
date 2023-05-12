@@ -132,7 +132,7 @@ function Resume() {
       logo: logoBwell,
       start: '2021',
       end: {
-        label: 'Present',
+        label: 'Now',
         dateTime: new Date().getFullYear(),
       },
     },
