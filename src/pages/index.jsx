@@ -190,7 +190,7 @@ function Resume() {
         ))}
       </ol>
       <Button
-        href='https://www.dropbox.com/s/sp58dmpeorqr7u4/nicol_spencer_resume_202305.pdf?dl=1'
+        href='https://www.dropbox.com/s/56clm0wq9iwqh49/spencer_nicol_resume.pdf?dl=0'
         variant='secondary'
         className='group mt-6 w-full'
       >
