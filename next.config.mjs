@@ -3,6 +3,8 @@ import remarkGfm from 'remark-gfm';
 import rehypePrism from '@mapbox/rehype-prism';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -19,11 +21,12 @@ const nextConfig = {
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkMath],
     rehypePlugins: [
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: 'wrap', properties: { className: 'heading-link' } }],
       rehypePrism,
+      rehypeKatex,
     ],
   },
 });
