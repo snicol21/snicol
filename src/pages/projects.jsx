@@ -11,8 +11,8 @@ const projects = [
   {
     name: 'Game Hub',
     description:
-      'Fun project I built following Mosh Hamedani’s React tutorial. Leveraging Zustand for state management, Axios for API communication, and React Query for data fetching and caching, Game Hub mimics the renowned rawg.io gaming website, utilizing their free API.',
-    link: { href: 'https://game-hub-one-rho.vercel.app/', label: 'https://game-hub-one-rho.vercel.app/' },
+      'Fun project I built following Mosh Hamedani’s React tutorial. Leveraging Chakra UI components, Zustand for state management, Axios for API communication, and React Query for data fetching and caching, Game Hub mimics the renowned rawg.io gaming website, utilizing their free API.',
+    link: { href: 'https://game-hub-one-rho.vercel.app/', label: 'game-hub-one-rho.vercel.app' },
     logo: logoGameHub,
   },
   {
