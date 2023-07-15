@@ -3,10 +3,18 @@ import Image from 'next/image';
 
 import { Card } from '@/components/Card';
 import { SimpleLayout } from '@/components/SimpleLayout';
+import logoGameHub from '@/images/logos/gameHub.webp';
 import logoHcPosh from '@/images/logos/hcat.png';
 import logoOurWardApp from '@/images/logos/ourwardapp.png';
 
 const projects = [
+  {
+    name: 'Game Hub',
+    description:
+      'Fun project I built following Mosh Hamedani’s React tutorial. Leveraging Zustand for state management, Axios for API communication, and React Query for data fetching and caching, Game Hub mimics the renowned rawg.io gaming website, utilizing their free API.',
+    link: { href: 'https://game-hub-one-rho.vercel.app/', label: 'https://game-hub-one-rho.vercel.app/' },
+    logo: logoGameHub,
+  },
   {
     name: 'OurWardApp',
     description:
