@@ -7,6 +7,7 @@ import { Container } from '@/components/Container';
 import { Prose } from '@/components/Prose';
 import { formatDate } from '@/lib/formatDate';
 import { addCopyButtons } from '@/lib/addCopyButtons';
+import { addBlankTargets } from '@/lib/addBlankTargets';
 
 function ArrowLeftIcon(props) {
   return (
@@ -28,6 +29,7 @@ export function ArticleLayout({ children, meta, previousPathname, isRssFeed = fa
     if (navigator && navigator.clipboard) {
       addCopyButtons(navigator.clipboard);
     }
+    addBlankTargets();
   }, []);
 
   useEffect(() => {
