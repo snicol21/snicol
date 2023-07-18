@@ -1,0 +1,353 @@
+import Image from 'next/image';
+import { ArticleLayout } from '@/components/ArticleLayout';
+import BaseballChart from './components/chart';
+
+export const meta = {
+  author: 'Spencer Nicol',
+  date: '2023-05-12',
+  title: 'Machine Learning Crash Course',
+  description:
+    'Regardless of your background or expertise, gain a better understanding of machine learning concepts and techniques. Drawing from the highly regarded Machine Learning Crash Course by Google, this article offers insights and notes to expand your knowledge and confidence in this rapidly growing field.',
+};
+
+export default (props) => <ArticleLayout meta={meta} {...props} />;
+
+<Image
+  src='https://media.publit.io/file/machineLearningCrashCourse/machine-learning-crash-course.jpg'
+  width={800}
+  height={400}
+  alt='Machine Learning Crash Course'
+/>
+
+As someone who has worked on data projects that involve "feature engineering"
+predictive models, I know firsthand how challenging it can be to have meaningful
+conversations with data scientists about the features I've provided. Although
+I've gained some knowledge and experience in this area, I've never felt
+completely comfortable discussing machine learning concepts and techniques with
+others in the field.
+
+That's why I've decided to create this crash course article, aimed at anyone who
+wants to gain a better understanding of machine learning, regardless of their
+background or expertise level. My goal is to provide an accessible and
+informative resource that highlights some of the key learnings I've gained from
+taking the
+["Machine Learning Crash Course by Google"](https://developers.google.com/machine-learning/crash-course).
+This course is a highly regarded resource for those looking to gain a
+foundational understanding of machine learning concepts and techniques. By
+sharing what I've learned, I hope to help others expand their knowledge and
+confidence in this exciting and rapidly growing field.
+
+## Introduction
+
+The course starts off by introducing the benefits of using machine learning,
+such as reducing time spent on programming, customizing and scaling products,
+and completing seemingly "unprogrammable" tasks. One of the most compelling
+benefits of machine learning is that you don't have to tell the algorithm what
+to do - you just need to provide it with lots of examples so that it can figure
+out what to do on its own.
+
+Additionally, the course emphasizes a philosophical reason for learning machine
+learning: it changes the way you think about problem-solving. Machine learning
+is a field that teaches computers to recognize patterns in data and make
+predictions based on those patterns. This approach aligns more with the way
+natural sciences solve problems by observing patterns and making predictions. In
+contrast, traditional mathematical sciences rely on formulas, equations, and
+rules. By learning machine learning, you can broaden your problem-solving skills
+and potentially discover innovative solutions that may not have been apparent
+using traditional mathematical approaches.
+
+## Supervised Machine Learning
+
+Supervised machine learning is one of the primary types of machine learning,
+where models are created to predict labels for new data based on past examples.
+A model is a mathematical function that maps features to labels. The model
+learns to identify patterns in the training data and use those patterns to make
+predictions on new, unseen data. When training a model in supervised machine
+learning, we need to provide two key pieces of information: labels and features.
+
+**Labels** are the output variables that we're trying to predict. It's often
+represented by the variable $y$ in linear regression models. The label could
+represent a wide range of things, from the type of animal in a picture to the
+sale price of a house. Labels are important because they define the problem
+we're trying to solve and help us evaluate the accuracy of our model's
+predictions.
+
+**Features** are the input variables used by the model to make predictions.
+They're often represented by the variable $x$ in linear regression models.
+Features can take many forms, such as numeric values, categorical values, or
+even more complex data types like images or audio. In supervised machine
+learning, the goal is to identify which features are most predictive of the
+label we're trying to predict.
+
+### Example: Spam Detector
+
+Let's say we want to create a supervised machine learning model to predict
+whether or not an email is spam. First, we need to create a labeled dataset. A
+labeled dataset is one where we already know the outcome, and this will serve as
+our training dataset. Here's an example of what a spam detector dataset might
+look like:
+
+| Subject Length | Has "Free" | Has "Urgent" | Unknown Sender | Label    |
+| -------------- | ---------- | ------------ | -------------- | -------- |
+| 10             | Yes        | No           | No             | Spam     |
+| 8              | No         | No           | Yes            | Not Spam |
+| 25             | Yes        | Yes          | Yes            | Spam     |
+| 18             | No         | No           | No             | Not Spam |
+| 15             | No         | Yes          | No             | Spam     |
+
+I selected four common features associated with spam emails for this dataset,
+which also includes a binary label column indicating whether each email is
+classified as spam or not.
+
+Once we've trained our model with labeled examples, we use that model to predict
+the label on unlabeled examples, also known as inference. In the spam detector,
+unlabeled examples are new emails that humans haven't yet labeled. This is an
+example of binary classification, where the model predicts whether an email is
+spam or not spam.
+
+In addition to binary classification, supervised machine learning includes
+several other types of tasks. Regression is another type of supervised learning
+that predicts a continuous numerical value, such as a house price. There are
+also other types of supervised learning tasks, such as ordinal regression and
+time series prediction, which differ in the nature of the output variable and
+the type of problem they solve. In the next section, we will explore linear
+regression, which is a fundamental supervised learning type.
+
+## Linear Regression
+
+Linear regression is a type of machine learning that helps us make predictions
+based on input data. The goal is to find a line that best represents the
+relationship between the input features and the output variable. We can use this
+line to make predictions about new data.
+
+For example, let's say we want to predict the strikeout rate of a baseball
+batter based on the pitch velocity of each pitch they receive. We can plot the
+data on a graph, with pitch velocity on the x-axis and strikeout rate on the
+y-axis. We can then fit a line to the data points that best represents this
+relationship. The line will have a slope and y-intercept, which can be used to
+predict the strikeout rate of a batter based on the pitch velocity they receive.
+
+<BaseballChart />
+
+To train the model, we need to find the values of the slope and y-intercept that
+minimize the difference between the predicted values and the actual values in
+our training set. We do this by adjusting the values iteratively until the model
+learns the best slope and y-intercept. We can use a loss function, such as the
+mean squared error (MSE), to measure how well the model is performing during
+training. Once the model is trained, we can use it to make predictions on new
+data.
+
+That's the basic idea of linear regression!
+
+## Reducing Loss
+
+Reducing loss is a crucial part of many machine learning algorithms, including
+linear regression. The goal of reducing loss is to find the best-fitting model
+that can accurately predict the output of a given input. This is done by
+minimizing the difference between the predicted output and the actual output. In
+the case of linear regression, the mean squared error is used as the loss
+function. By minimizing this error, we can obtain a model that best fits the
+data and makes accurate predictions. Gradient descent and learning rate
+adjustments are two techniques commonly used to minimize the loss function and
+improve the performance of linear regression models.
+
+### Gradient Descent
+
+Gradient descent is a popular optimization algorithm used in machine learning to
+find the minimum value of a function. In the context of linear regression, the
+function being minimized is the mean squared error, which measures the
+difference between the predicted and actual values of the dependent variable.
+
+Gradient descent works by iteratively adjusting the model's parameters in the
+direction of steepest descent of the cost function. The size of each adjustment
+is determined by the learning rate, which is a hyperparameter (adjustable
+parameters that determine the model architecture and affect the model's
+performance) that needs to be tuned. While gradient descent can be very
+effective at minimizing the loss function, it can also get stuck in local minima
+or diverge if the learning rate is set too high. Therefore, careful tuning of
+the learning rate and initialization of model parameters is necessary for good
+performance.
+
+### Learning Rate
+
+The learning rate is a hyperparameter that determines the step size at each
+iteration while moving toward a minimum of a loss function. It controls how much
+the model parameters are adjusted with respect to the gradient of the loss
+function.
+
+Selecting an appropriate learning rate is crucial for training a machine
+learning model. A high learning rate can lead to rapid learning but may cause
+the model to converge to a suboptimal solution or diverge entirely. On the other
+hand, a low learning rate can result in more accurate results, but the learning
+process may take longer.
+
+There are various techniques for selecting the best learning rate, such as
+manually adjusting the value, using pre-defined methods like learning rate
+schedules or adaptive learning rates, or performing a search across a range of
+possible values.
+
+One common technique for setting the learning rate is to use a learning rate
+schedule. This is a function that determines the learning rate over time, with
+the learning rate being high at the beginning of the training process and
+gradually decreasing as the model gets closer to the optimal values. Common
+learning rate schedules include step decay, exponential decay, and time-based
+decay.
+
+Using a learning rate schedule can help the model converge faster and more
+reliably, but selecting an appropriate schedule can be difficult and requires
+some experimentation.
+
+### Recap: Reducing Loss and Optimizing Models
+
+Now that we've explored the intricacies of reducing loss, gradient descent, and
+learning rates, it's natural for these concepts to appear complex and
+overwhelming. However, it's important to remember that at their core, these
+techniques serve a common purpose: minimizing the difference between predicted
+and actual values. They are valuable tools that data scientists utilize to
+fine-tune models and improve their performance. Don't worry if these concepts
+seem intricate for now – our goal is to provide you with a solid understanding
+of machine learning concepts.
+
+## Generalization
+
+Generalization is a fundamental concept in machine learning that helps us create
+models capable of making accurate predictions on new, unseen data. When we train
+a model, we need to be mindful of overfitting, where the model becomes too
+focused on the training data, making it less effective when faced with new
+examples.
+
+To achieve good generalization, we strike a balance between capturing important
+patterns in the data and avoiding overly complex models. This balance involves
+considering two factors: bias and variance. Bias refers to the error introduced
+by simplifying the model, while variance refers to its sensitivity to variations
+in the training data.
+
+By finding the right balance between simplicity and complexity, we ensure that
+our models can capture meaningful patterns without getting too caught up in
+specific details. This allows them to generalize well to new cases and make
+reliable predictions.
+
+To evaluate the generalization ability of our models, we use a separate dataset
+called the test set. This evaluation provides an indication of how well the
+model is likely to perform on new, unseen data. If the model performs well on
+the test set, we can have more confidence in its ability to generalize
+effectively.
+
+It's important to keep in mind that generalization relies on certain
+assumptions. We assume that the training and testing examples represent the
+real-world data well, and that the underlying data distribution remains
+consistent. However, these assumptions may not always hold true in dynamic
+environments or when the data changes significantly.
+
+In summary, generalization allows us to build models that can make accurate
+predictions on new, unseen data. By finding the right balance between simplicity
+and complexity, considering the bias-variance trade-off, and being aware of the
+underlying assumptions, we can develop reliable models that generalize well to
+real-world scenarios.
+
+## Training, Validation, and Test Sets
+
+Training, validation, and test sets are essential components of machine
+learning. They help us develop and evaluate models effectively. In addition to
+the training and test sets, there is another crucial set called the validation
+set. Let's explore the role of each set and how they contribute to the model
+development process.
+
+### Training Set
+
+The training set is used to teach the model. It contains labeled examples that
+enable the model to learn patterns in the data and make accurate predictions.
+During the training process, the model adjusts its parameters to minimize the
+difference between predicted and actual values. The training set provides the
+foundation for the model's understanding and helps it generalize to new
+examples.
+
+### Validation Set
+
+The validation set plays a crucial role in model development. It serves as an
+intermediary step between the training and test sets. The validation set is used
+to fine-tune the model's hyperparameters and assess its performance during the
+training process. By evaluating the model's predictions on the validation set,
+we can make adjustments and optimize the model's architecture and
+hyperparameters.
+
+The validation set allows us to experiment with different configurations, such
+as varying the learning rate, adjusting the model's complexity, or exploring
+different optimization algorithms. By comparing the performance of different
+models on the validation set, we can select the best-performing one for further
+evaluation on the test set. This iterative process of training, validation, and
+adjustment helps us refine the model and improve its performance.
+
+### Test Set
+
+The test set is the final benchmark for evaluating the model's performance. It
+contains examples that the model hasn't encountered during training or
+validation. The test set allows us to assess how well the model generalizes to
+new, unseen data and make reliable predictions in real-world scenarios. By
+measuring the model's performance on the test set, we can gain confidence in its
+ability to make accurate predictions and assess its effectiveness in solving the
+intended problem.
+
+It's important to note that the test set should only be used sparingly. Once the
+model has been evaluated on the test set, it should not be further adjusted or
+fine-tuned based on its performance. Using the test set for iterative model
+development can lead to overfitting, where the model becomes overly specialized
+to the test set and performs poorly on new examples.
+
+<Image
+  src='https://media.publit.io/file/machineLearningCrashCourse/training_validation_test.png'
+  width={800}
+  height={400}
+  alt='Training, Validation, and Test Sets'
+/>
+
+By carefully partitioning the data into training, validation, and test sets, we
+can develop models that learn from the training set, optimize their performance
+using the validation set, and assess their generalization ability on the test
+set. This three-way partitioning enables us to build robust and reliable models
+that demonstrate their effectiveness across diverse datasets and real-world
+scenarios.
+
+## Feature engineering
+
+Feature engineering transformins raw data into a format that the model can
+effectively utilize. Here are some key points to consider:
+
+1. Understand the Data: Gain a deep understanding of the dataset to make
+   informed decisions during feature engineering. Study feature characteristics,
+   identify missing values or outliers, and analyze relationships between
+   variables.
+
+2. Select Informative Features: Choose relevant features to reduce
+   dimensionality and eliminate noisy or redundant information. Techniques like
+   correlation analysis, statistical tests, and domain knowledge can guide
+   feature selection.
+
+3. Create New Features: Generate additional features that provide valuable
+   insights. Combine, transform, or extract information from existing features.
+   For example, create interaction features or derive patterns from text,
+   images, or time-series data.
+
+4. Handle Missing Data: Address missing values appropriately. Impute missing
+   values using techniques like mean, median, or regression imputation. Consider
+   creating new features to indicate missing values.
+
+5. Normalize and Scale Features: Scale features to a consistent range to prevent
+   dominance by larger-magnitude features. Techniques like standardization and
+   normalization can improve convergence speed and model performance.
+
+Tips and Tricks:
+
+- Domain Knowledge: Incorporate domain knowledge to identify relevant features
+  and transformations that align with the problem you're solving.
+
+- Iterative Process: Experiment with different feature combinations,
+  transformations, and selections to find the most effective set of features.
+
+- Regularization: Consider regularization techniques to automatically select
+  informative features and reduce the impact of noisy or irrelevant ones.
+
+By performing feature engineering, we improve the model's ability to learn
+patterns and make accurate predictions. It involves understanding the data,
+selecting informative features, creating new ones, handling missing data, and
+scaling features appropriately.
