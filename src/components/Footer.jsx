@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Container } from '@/components/Container';
+import { HomeIcon } from '@/components/Icons';
 
 function NavLink({ href, children }) {
   return (
@@ -17,7 +18,9 @@ export function Footer() {
           <Container.Inner>
             <div className='flex flex-col items-center justify-between gap-6 sm:flex-row'>
               <div className='flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200'>
-                <NavLink href='/'>Home</NavLink>
+                <NavLink href='/'>
+                  <HomeIcon className='w-6' />
+                </NavLink>
                 <NavLink href='/about'>About</NavLink>
                 <NavLink href='/articles'>Articles</NavLink>
                 <NavLink href='/projects'>Projects</NavLink>
