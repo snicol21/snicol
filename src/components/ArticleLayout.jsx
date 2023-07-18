@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Script from 'next/script';
-
 import { Container } from '@/components/Container';
 import { Prose } from '@/components/Prose';
 import { formatDate } from '@/lib/formatDate';

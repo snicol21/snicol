@@ -3,13 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { useRef, useEffect, useState } from 'react';
-
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
 import { Container } from '@/components/Container';
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons';
 import logoHcat from '@/images/logos/hcat.png';
 import logoBwell from '@/images/logos/bwell.png';
+import logoMayo from '@/images/logos/mayoClinic.jpg';
 import image1 from '@/images/photos/image-1.jpg';
 import image2 from '@/images/photos/image-2.jpg';
 import image3 from '@/images/photos/image-3.jpg';
@@ -127,14 +127,21 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'b.well Connected Health',
-      title: 'Senior Software Engineer',
-      logo: logoBwell,
-      start: '2021',
+      company: 'Mayo Clinic',
+      title: 'Senior Platform Integration Engineer',
+      logo: logoMayo,
+      start: '2023',
       end: {
         label: 'Now',
         dateTime: new Date().getFullYear(),
       },
+    },
+    {
+      company: 'b.well Connected Health',
+      title: 'Senior Software Engineer',
+      logo: logoBwell,
+      start: '2021',
+      end: '2023',
     },
     {
       company: 'Health Catalyst',
@@ -169,7 +176,7 @@ function Resume() {
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className='flex gap-4'>
             <div className='relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0'>
-              <Image src={role.logo} alt='Logo' className='h-8 w-auto rounded-full' unoptimized />
+              <Image src={role.logo} alt='Logo' className='h-10 w-auto rounded-full' unoptimized />
             </div>
             <dl className='flex flex-auto flex-wrap gap-x-2'>
               <dt className='sr-only'>Company</dt>
